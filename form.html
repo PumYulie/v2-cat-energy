@@ -2,7 +2,7 @@
 <html class="page" lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>Cat Energy - здоровый корм для кошек</title>
+    <title>Cat Energy - форма заказа</title>
   </head>
 
   <body class="page__body">
@@ -41,87 +41,97 @@
 			</nav>
 		</header>
 
-		<main class="page__main">
-			<section class="first-screen">
-				<div class="site-container">
-					<h1 class="first-screen__title title">Функциональное питание для котов</h1>
-					<p class="first-screen__description">Занялся собой? Займись котом!</p>
-					<img class="first-screen-image" width="280" height="270" src="./img/index/index-can-mobile.png" alt="Банка корма Cat Energy PRO с курицей">
-					<a class="first-screen__button button" href="#">Подобрать программу</a>
-				</div>
-			</section>
-
-			<section class="goals site-container">
-				<h2 class="visually-hidden">Для каких задач подходит корм Cat Energy</h2>
-				<article class="goals__goal goal">
-					<h3 class="goal__title title-style">Похудение</h3>
-					<p class="goal__description">Ваш кот весит больше собаки и почти утратил способность лазить по деревьям? Пора на диету! Cat Energy Slim поможет вашему питомцу сбросить лишний вес.</p>
-					<a class="goal__button link-button" href="#">Каталог slim</a>
-				</article>
-				<article class="goals__goal goal">
-					<h3 class="goal__title title-style">Набор массы</h3>
-					<p class="goal__description">Заработать авторитет среди дворовых котов и даже собак? Серия Cat Energy Pro поможет вашему коту нарастить необходимые мышцы!</p>
-					<a class="goal__button link-button" href="#">Каталог pro</a>
-				</article>
-			</section>
-
-			<section class="advantages site-container">
-				<h2 class="advantages__title title">Как это работает</h2>
-				<ol class="advantages__list">
-					<li class="advantages__item">
-						<p class="advantages__description">Функциональное питание содержит только полезные питательные вещества.</p>
-					</li>
-					<li class="advantages__item">
-						<p class="advantages__description">Выпускается в виде порошка, который нужно лишь залить кипятком и готово.</p>
-					</li>
-					<li class="advantages__item">
-						<p class="advantages__description">Замените один-два приема обычной еды на наше функциональное питание.</p>
-					</li>
-					<li class="advantages__item">
-						<p class="advantages__description">Уже через месяц наслаждайтесь изменениями к лучшему вашего питомца!</p>
-					</li>
-				</ol>
-			</section>
-
-			<section class="exam  ple">
-				<div class="site-container">
-					<div class="example__text-content">
-						<h2 class="example__title title">Живой пример</h2>
-						<p class="exaple__description">Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день. </p>
-						<div class="example__details">
-							<div class="example__detail detail">
-								<h3 class="datail__title">5 кг</h3>
-								<small class="detail__description">Снижение веса</small>
-							</div>
-							<div class="example__detail detail">
-								<h3 class="datail__title">60 дней</h3>
-								<small class="detail__description">Затрачено времени</small>
-							</div>
-						</div>
-						<div class="example__subtitle title-style">
-							<p class="example__subtitle-1">Затраты на питание:</p>
-							<p class="example__subtitle-2">15 000 руб. </p>
-						</div>
+		<main class="page-main">
+			<h1 class="page-main__title site-container">Подбор программы</h1>
+			<p class="page-main__description title-style site-container">Заполните анкету, и мы подберем программу питания для вашего кота</p>
+			<form class="page-main__form form" action="#" method="post">
+				<fieldset class="form__fieldset basic-info">
+					<legend class="visually-hidden">Данные кота</legend>
+					<div class="basic-info__inputs-wrapper">
+						<label class="input__label">
+							Имя:*
+							<input class="input" type="text" name="name" placeholder="Барсик" required>
+						</label>
+						<label class="input__label">
+							Вес (кг):*
+							<input class="input" type="number" name="weight" placeholder="7" required>
+						</label>
+						<label class="input__label">
+							Возраст (лет):
+							<input class="input" type="number" name="age" placeholder="7">
+						</label>
 					</div>
-
-					<div class="example__visual-content">
-						<div class="example__image-wrapper">
-							<img class="example__cat-before" width="311" height="232" src="./img/index/cat-before.png" alt="Толстый кот">
-							<img class="example__cat-after" width="251" height="240" src="./img/index/cat-after.png" alt="Стройный кот">
-						</div>
-
-						<!-- непонятно как делать слайдер -->
-						<div class="example__progress-wrapper progress-bar">
-							<button class="progress-bar__text progress-bar-button" type="button">Было</button>
-							<div class="progress-bar__back-bar">
-								<div class="progress-bar__active"></div>
-							</div>
-							<button class="progress-bar__text progress-bar-button" type="button">Стало</button>
-						</div>
-
+					<div class="basic-info__radio-group radio-group">
+						<label class="radio-group__label input__label">
+							<input class="visually-hidden" type="radio" name="purpose" value="lose" checked>
+							<span class="radio-group__radio-mark radio-mark"></span>
+							<span class="radio-group__visible-label">Похудение</span>
+						</label>
+						<label class="radio-group__label input__label">
+							<input class="visually-hidden" type="radio" name="purpose" value="gain">
+							<span class="radio-group__radio-mark radio-mark"></span>
+							<span class="radio-group__visible-label">Набор массы</span>
+						</label>
+						<label class="radio-group__label input__label">
+							<input class="visually-hidden" type="radio" name="purpose" value="dont-know">
+							<span class="radio-group__radio-mark radio-mark"></span>
+							<span class="radio-group__visible-label">Не знаю (Нужен ваш совет)</span>
+						</label>
 					</div>
+				</fieldset>
+
+				<fieldset class="form__fieldset cat-owner">
+					<legend class="cat-owner__legend fieldset-legend site-container">Контактные данные (владельца кота)</legend>
+					<div class="cat-owner__inputs-wrapper site-container">
+						<label class="input__label">
+							E-mail:*
+							<input class="input" type="email" name="email" placeholder="kuklachev@gmail.com" required>
+						</label>
+						<label class="input__label">
+							E-mail:*
+							<input class="input" type="tel" name="tel" placeholder="8 (960) 900-60-90" required>
+						</label>
+					</div>
+				</fieldset>
+
+				<fieldset class="form__fieldset comments">
+					<legend class="comments__legend fieldset-legend site-container">Комментарий</legend>
+					<textarea class="comments__textarea site-container">
+						Расскажите обо всех повадках кота
+					</textarea>
+				</fieldset>
+
+				<fieldset class="form__fieldset other-info">
+					<legend class="other-info__legend fieldset-legend site-container">Комментарий</legend>
+					<div class="other-info__inputs-wrapper site-container">
+						<label class="other-info__label input__label">
+							<input class="visually-hidden" type="checkbox" name="other-info" value="anti-sugar" checked>
+							<span class="other-info__checkbox-mark checkbox-mark"></span>
+							<span class="other-info__visible-label">Сахарозаменитель</span>
+						</label>
+						<label class="other-info__label input__label">
+							<input class="visually-hidden" type="checkbox" name="other-info" value="water">
+							<span class="other-info__checkbox-mark checkbox-mark"></span>
+							<span class="other-info__visible-label">Питьевая вода</span>
+						</label>
+						<label class="other-info__label input__label">
+							<input class="visually-hidden" type="checkbox" name="other-info" value="milk">
+							<span class="other-info__checkbox-mark checkbox-mark"></span>
+							<span class="other-info__visible-label">Молоко</span>
+						</label>
+						<label class="other-info__label input__label">
+							<input class="visually-hidden" type="checkbox" name="other-info" value="vitamins">
+							<span class="other-info__checkbox-mark checkbox-mark"></span>
+							<span class="other-info__visible-label">Витамины</span>
+						</label>
+					</div>
+				</fieldset>
+
+				<div class="form__button-wrapper">
+					<button class="form__button button" type="submit">Отправить заявку</button>
+					<p class="form__disclaimer">* — Обязательные поля</p>
 				</div>
-			</section>
+			</form>
 		</main>
 
 		<footer class="page-footer site-container">
