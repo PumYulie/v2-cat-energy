@@ -1,0 +1,26 @@
+.button-base() {
+	display: block;
+	margin: 0;
+
+	font-family: "Oswald";
+	font-style: normal;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+.button {
+	.button-base();
+
+	color: @light-text;
+	text-align: center;
+	background-color: @button-bg-color;
+
+	&:hover {
+		background-color: @button-bg-color-hover;
+	}
+
+	&:active {
+		background-color: @button-bg-color-hover;
+		color: @button-color-active;
+	}
+}

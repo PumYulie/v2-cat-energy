@@ -1,0 +1,32 @@
+/* .title-base() {
+	margin: 0;
+	padding: 0;
+
+	font-family: "Oswald";
+	font-style: normal;
+	font-weight: 400;
+	color: @darkest;
+} */
+
+.title-font(@font-size; @line-height) {
+	.title-base();
+	font-size: @font-size;
+	line-height: @line-height;
+}
+
+.title {
+	.title-base();
+	.title-font(36px; 36px);
+}
+
+.title--style {
+	.title-base();
+	text-transform: uppercase;
+}
+
+.title--light {
+	.title-base();
+	.title-font(36px; 36px);
+	color: @light-text;
+	text-align: center;
+}

@@ -1,0 +1,31 @@
+.link-base() {
+	.button-base();
+
+	color: @darkest;
+	text-align: start;
+	background-color: transparent;
+
+	&:hover {
+		opacity: 0.6;
+	}
+
+	&:active {
+		opacity: 0.3;
+	}
+}
+
+.link {
+	.link-base();
+}
+
+.link--goals {
+	.link-base();
+
+	&:hover {
+		opacity: 1;
+	}
+
+	&:active { /* повторяю из примеси, тк active дб ниже hover */
+		opacity: 0.3;
+	}
+}
