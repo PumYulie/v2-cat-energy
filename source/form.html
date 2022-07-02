@@ -57,8 +57,7 @@
 			<form class="program-choice__form form" action="#" method="post">
 
 				<fieldset class="form__fieldset form__basic-info form-basics">
-					<legend class="visually-hidden">Данные кота</legend>
-
+					<h2 class="visually-hidden">Данные кота</h2>
 					<ul class="form-basics__input-list site-container">
 						<li class="form-basics__input-item">
 							<label class="input__label form-basics__label">
@@ -79,7 +78,6 @@
 							</label>
 						</li>
 					</ul>
-
 					<ul class="form-basics__radio-group radio-group">
 						<li class="radio-group__item">
 							<label class="input__label radio-group__label">
@@ -105,61 +103,67 @@
 					</ul>
 				</fieldset>
 
-				<fieldset class="form__fieldset form__form-owner form-owner site-container">
-					<legend class="form-owner__title title--form">Контактные данные (владельца кота)</legend>
-					<ul class="form-owner__list">
-						<li class="form-owner__list-item">
-							<label class="form-owner__label input__label">
-								E-mail:*
-								<input class="input form-owner__input" type="email" name="email" placeholder="kuklachev@gmail.com" required>
-							</label>
-						</li>
-						<li class="form-owner__list-item">
-							<label class="form-owner__label input__label">
-								Телефон:*
-								<input class="input form-owner__input" type="tel" name="tel" placeholder="8 (960) 900-60-90" required>
-							</label>
-						</li>
-					</ul>
+				<fieldset class="form__fieldset form__form-owner form-owner">
+					<div class="site-container">
+						<h2 class="form-owner__title title--form">Контактные данные (владельца кота)</h2>
+						<ul class="form-owner__list">
+							<li class="form-owner__list-item">
+								<label class="form-owner__label input__label">
+									E-mail:*
+									<input class="input form-owner__input" type="email" name="email" placeholder="kuklachev@gmail.com" required>
+								</label>
+							</li>
+							<li class="form-owner__list-item">
+								<label class="form-owner__label input__label">
+									Телефон:*
+									<input class="input form-owner__input" type="tel" name="tel" placeholder="8 (960) 900-60-90" required>
+								</label>
+							</li>
+						</ul>
+					</div>
 				</fieldset>
 
-				<fieldset class="form__fieldset form__comment form-comment site-container">
-					<legend class="form-comment__title title--form">Комментарий</legend>
-					<textarea class="form-comment__textarea title--style">Расскажите обо всех повадках кота</textarea>
+				<fieldset class="form__fieldset form__comment form-comment">
+					<div class="site-container">
+						<h2 class="form-comment__title title--form">Комментарий</h2>
+						<textarea class="form-comment__textarea title--style">Расскажите обо всех повадках кота</textarea>
+					</div>
 				</fieldset>
 
-				<fieldset class="form__fieldset form__other-info other-info site-container">
-					<legend class="other-info__title title--form">Дополнительно</legend>
-					<ul class="other-info__list">
-						<li class="other-info__list-item">
-							<label class="other-info__label input__wrapping-label">
-								<input class="visually-hidden" type="checkbox" name="other-info" value="anti-sugar" checked>
-								<span class="other-info__checkbox-mark input__checkbox-mark"></span>
-								<span class="other-info__visible-label input__label">Сахарозаменитель</span>
-							</label>
-						</li>
-						<li class="other-info__list-item">
-							<label class="other-info__label input__wrapping-label">
-								<input class="visually-hidden" type="checkbox" name="other-info" value="water">
-								<span class="other-info__checkbox-mark checkbox-mark"></span>
-								<span class="other-info__visible-label input__label">Питьевая вода</span>
-							</label>
-						</li>
-						<li class="other-info__list-item">
-							<label class="other-info__label input__wrapping-label">
-								<input class="visually-hidden" type="checkbox" name="other-info" value="milk">
-								<span class="other-info__checkbox-mark checkbox-mark"></span>
-								<span class="other-info__visible-label input__label">Молоко</span>
-							</label>
-						</li>
-						<li class="other-info__list-item">
-							<label class="other-info__label input__wrapping-label">
-								<input class="visually-hidden" type="checkbox" name="other-info" value="vitamins">
-								<span class="other-info__checkbox-mark checkbox-mark"></span>
-								<span class="other-info__visible-label input__label">Витамины</span>
-							</label>
-						</li>
-					</ul>
+				<fieldset class="form__fieldset form__form-other form-other">
+					<div class="site-container">
+						<h2 class="form-other__title title--form">Дополнительно</h2>
+						<ul class="form-other__list site-container">
+							<li class="form-other__list-item">
+								<label class="form-other__label input__label">
+									<input class="visually-hidden" type="checkbox" name="form-other" value="anti-sugar" checked>
+									<span class="form-other__checkbox-mark input__checkbox-mark"></span>
+									<span class="form-other__visible-label">Сахарозаменитель</span>
+								</label>
+							</li>
+							<li class="form-other__list-item">
+								<label class="form-other__label input__label">
+									<input class="visually-hidden" type="checkbox" name="form-other" value="water">
+									<span class="form-other__checkbox-mark input__checkbox-mark"></span>
+									<span class="form-other__visible-label">Питьевая вода</span>
+								</label>
+							</li>
+							<li class="form-other__list-item">
+								<label class="form-other__label input__label">
+									<input class="visually-hidden" type="checkbox" name="form-other" value="milk">
+									<span class="form-other__checkbox-mark input__checkbox-mark"></span>
+									<span class="form-other__visible-label">Молоко</span>
+								</label>
+							</li>
+							<li class="form-other__list-item">
+								<label class="form-other__label input__label">
+									<input class="visually-hidden" type="checkbox" name="form-other" value="vitamins">
+									<span class="form-other__checkbox-mark input__checkbox-mark"></span>
+									<span class="form-other__visible-label">Витамины</span>
+								</label>
+							</li>
+						</ul>
+					</div>
 				</fieldset>
 
 				<div class="form__button-wrapper site-container">
