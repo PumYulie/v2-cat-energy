@@ -1,0 +1,30 @@
+.radio-group__item:not(:last-child) {
+	margin-bottom: 13px;
+}
+
+.radio-group__label {
+	display: flex;
+	align-items: center;
+}
+
+.radio-group__visible-label {
+	margin-left: 20px;
+}
+
+.radio-group__input:checked + .radio-group__radio-mark::before {
+/* 	content: ""; */
+	visibility: visible;
+
+/* 	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+
+	width: 13px;
+	height: 13px;
+	border-radius: 50%;
+	background-color: @button-bg-color; */
+}
+

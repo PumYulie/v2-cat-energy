@@ -10,8 +10,10 @@
 
 .button {
 	.button-base();
+	padding: 10px;
+	border: none;
 
-	color: @light-text;
+	color: @lightest;
 	text-align: center;
 	background-color: @button-bg-color;
 
@@ -22,5 +24,24 @@
 	&:active {
 		background-color: @button-bg-color-hover;
 		color: @button-color-active;
+	}
+}
+
+.button--minor {
+	.button-base();
+	padding: 10px;
+
+	color: @special-dark-grey;
+	text-align: center;
+
+	background-color: @basic_grey;
+
+	&:hover {
+		background-color: @button-minor-hover;
+	}
+
+	&:active {
+		color: lighten(@special-dark-grey, 30%);
+		background-color: @button-minor-hover;
 	}
 }

@@ -1,0 +1,29 @@
+.input {
+	flex-grow: 1;
+
+	padding: 15px;
+	padding-bottom: 13px;
+	border: 1px solid @special-grey;
+
+	&::placeholder {
+		.title-base();
+
+		font-size: 16px;
+		line-height: 18px;
+		color: @special-dark-grey;
+		text-transform: uppercase;
+	}
+}
+
+.input__label {
+	margin: 0;
+	padding: 0;
+/* 	width: 100%; */
+
+	font-family: "Oswald";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	color: @darkest;
+	text-transform: uppercase;
+}

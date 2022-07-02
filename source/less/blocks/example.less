@@ -34,6 +34,10 @@
 	margin-bottom: 40px;
 
 	line-height: 20px;
+
+	&-1, &-2 {
+		margin: 0;
+	}
 }
 
 .example__subtitle-1 {
@@ -41,5 +45,31 @@
 }
 
 .example__image-wrapper {
+	display: grid;
+	grid-template-rows: 232px;
+
 	margin-bottom: 15px;
+}
+
+.example__img {
+	grid-column: ~"1 / 2";
+	grid-row: ~"1 / 2";
+
+	height: 232px;
+	margin: 0 auto;
+
+	background-color: @background-grey;
+
+	&--before {
+		z-index: 1;
+		width: 280px;
+	}
+
+	&--after {
+		width: 243px;
+	}
+}
+
+.example__progress-wrapper {
+	margin: 0 auto;
 }

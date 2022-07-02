@@ -1,0 +1,37 @@
+.upsale-item {
+	display: grid;
+	grid-template-columns: 1fr 70px;
+	row-gap: 13px;
+
+	padding-top: 13px;
+	border-top: 1px solid @special-grey;
+
+	&:last-child {
+		padding-bottom: 19px;
+		border-bottom: 1px solid @special-grey;
+	}
+}
+
+.upsale-item__title {
+	grid-column: ~"1 / -1";
+
+	color: @more-dark-grey;
+	font-size: 16px;
+	line-height: 16px;
+}
+
+.upsale-item__description {
+	margin: 0;
+
+	&--price {
+		justify-self: end;
+	}
+}
+
+.upsale-item__button {
+	grid-column: ~"1 / -1";
+	margin-top: 2px;
+
+	font-size: 16px;
+	line-height: 20px;
+}

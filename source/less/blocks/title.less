@@ -1,4 +1,4 @@
-/* .title-base() {
+.title-base() {
 	margin: 0;
 	padding: 0;
 
@@ -6,7 +6,7 @@
 	font-style: normal;
 	font-weight: 400;
 	color: @darkest;
-} */
+}
 
 .title-font(@font-size; @line-height) {
 	.title-base();
@@ -19,6 +19,14 @@
 	.title-font(36px; 36px);
 }
 
+.title--form {
+	.title-base();
+	.title-font(24px; 26px);
+	padding-left: 20px;
+	padding-right: 22px;
+	background-color: @lightest;
+}
+
 .title--style {
 	.title-base();
 	text-transform: uppercase;
@@ -27,6 +35,6 @@
 .title--light {
 	.title-base();
 	.title-font(36px; 36px);
-	color: @light-text;
+	color: @lightest;
 	text-align: center;
 }

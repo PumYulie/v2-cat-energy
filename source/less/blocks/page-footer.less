@@ -1,0 +1,37 @@
+.page-footer {
+	background-color: @basic_grey;
+	padding-bottom: 22px;
+}
+
+.page-footer__logo {
+	display: block;
+	width: 128px;
+	margin: 39px auto 31px auto;
+}
+
+.page-footer__socials {
+	width: 100%;
+	padding: 20px 0;
+	border-top: 1px solid @separator-grey;
+	border-bottom: 1px solid @separator-grey;
+}
+
+.page-footer__dev-link {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 22px;
+
+	&:hover .page-footer__dev-logo,
+	&:active .page-footer__dev-logo {
+		fill: @button-bg-color;
+	}
+
+	&:active {
+		opacity: 0.3;
+	}
+}
+
+.page-footer__dev-name {
+	margin: 0;
+}
