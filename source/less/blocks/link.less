@@ -1,9 +1,16 @@
 .link-base() {
-	.button-base();
+	display: block;
+	margin: 0;
 
+	font-family: "Oswald";
+	font-style: normal;
+	font-weight: 400;
+	text-transform: uppercase;
 	color: @darkest;
 	text-align: start;
+
 	background-color: transparent;
+	border: none;
 
 	&:hover {
 		opacity: 0.6;
@@ -30,10 +37,7 @@
 	}
 }
 
+/* под сомнением нужен ли, зависит от состояний активности */
 .link--progress-bar {
 	.link-base();
-
-	font-size: 16px;
-	line-height: 20px;
-	border: transparent;
 }

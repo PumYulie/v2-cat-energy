@@ -1,7 +1,7 @@
 .contacts {
 	background-color: @lightest;
 
-	&--catalog {
+	&--catalog { /* у страницы каталог чуть другой футтер */
 		background-color: @basic_grey;
 	}
 }
@@ -9,10 +9,14 @@
 .contacts__text-wrapper {
 	display: flex;
 	justify-content: space-between;
-	padding: 26px 0;
+	padding: 26px 20px;
+
+	@media (min-width: @tablet-width) {
+		padding: 56px 70px;
+	}
 }
 
-.contacts__text-wrapper--catalog {
+.contacts__text-wrapper--catalog { /* у страницы каталог чуть другой футтер */
 	background-color: @basic_grey;
 }
 
@@ -21,6 +25,18 @@
 
 	font-size: 16px;
 	line-height: 20px;
+
+	@media (min-width: @tablet-width) {
+		font-size: 20px;
+		line-height: 26px;
+	}
+}
+
+.contacts__address {
+	@media (min-width: @tablet-width) {
+		max-width: 180px;
+		text-align: end;
+	}
 }
 
 .contacts__street,
@@ -31,16 +47,31 @@
 	line-height: 20px;
 }
 
+.contacts__street {
+	@media (min-width: @tablet-width) {
+		margin-bottom: 20px;
+	}
+}
+
 .contacts__map-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
 	height: 362px;
+
+	@media (min-width: @tablet-width) {
+		height: 400px;
+	}
 }
 
 .contacts__map-pin {
 	display: block;
 	width: 57px;
 	height: 53px;
+
+	@media (min-width: @tablet-width) {
+		width: 113px;
+		height: 106px;
+	}
 }

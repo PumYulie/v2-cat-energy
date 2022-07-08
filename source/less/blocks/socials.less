@@ -1,15 +1,38 @@
-.socials {
+.socials__list {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
 
 	width: 130px;
 	padding-right: 4px;
 	margin: 0 auto;
+
+	@media (min-width: @tablet-width) {
+		justify-content: flex-start;
+		width: 129px;
+		padding-right: 0;
+		transform: translateY(-2px);
+	}
 }
 
 .socials__item--vk {
 	padding-right: 3px;
+
+	@media (min-width: @tablet-width) {
+		margin-right: 27px;
+		padding-right: 0;
+	}
+}
+
+.socials__item--insta {
+	@media (min-width: @tablet-width) {
+		margin-right: 21px;
+	}
+}
+
+.socials__svg {
+	display: block;
 }
 
 .socials__link {

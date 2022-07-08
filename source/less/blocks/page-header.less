@@ -1,14 +1,50 @@
 .page-header {
 	display: grid;
-	grid-template-columns: 34px 1fr 34px;
+	grid-template-columns: auto 1fr 34px;
 
 	padding-top: 11px;
 	padding-bottom: 17px;
+
+	@media (min-width: @tablet-width) {
+		align-items: center;
+		grid-template-columns: auto auto 1fr; /* ширина текста лого 102px */
+		column-gap: 12px;
+
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	@media (min-width: @desktop-width) {
+		grid-template-columns: auto auto 1fr;
+		column-gap: 14px;
+
+		position: absolute;
+		top: 53px;
+		left: 0;
+		right:0;
+	}
 }
 
 .page-header__logo-pic {
 	width: 33px;
 	height: 38px;
+
+	@media (min-width: @tablet-width) {
+		width: 60px;
+		height: 50px; /* определяет высоту всего хедера в 50 */
+	}
+
+/* 		.page-header__logo-pic .page-header__svg {
+			width: 60px;
+			height: 50px;
+		}
+	} */
+
+	/* 	@media (min-width: @desktop-width) {
+		.page-header__logo-pic {
+			width: 180px;
+		}
+	} */
 }
 
 .page-header__logo-name {
@@ -17,12 +53,28 @@
 	align-self: center;
 
 	display: block;
-	margin-top: 8px;
+	margin-top: 17px;
+
+	@media (min-width: @tablet-width) {
+		align-self: start;
+		margin-top: 17px;
+	}
 }
 
 .page-header__navigation {
 	justify-self: end;
 	align-self: end;
+
+	@media (min-width: @tablet-width) {
+		align-self: start;
+		margin-top: 16px;
+	}
+}
+
+.page-header__menu-toggle {
+	@media (min-width: @tablet-width) {
+		display: none;
+	}
 }
 
 .page-header__menu-list {
@@ -34,9 +86,16 @@
 
 	width: 100vw;
 
+	@media (min-width: @tablet-width) {
+		position: static;
+		display: flex;
+		justify-content: end;
+
+		width: auto;
+	}
 }
 
-/* навесить класс для открытия меню по клику на бургер */
+/* навесить класс для открытия меню по клику на бургер на мобилке */
 .page-header__menu-list--open {
 	display: block;
 }
@@ -46,11 +105,25 @@
 	border-top: 1px solid @separator-menu-grey;
 
 	text-align: center;
-
 	background-color: @lightest;
 
 	&:last-child {
 		border-bottom: 1px solid @separator-menu-grey;
+	}
+
+	@media (min-width: @tablet-width) {
+		padding: 0;
+		margin-right: 35px;
+		border: none;
+
+		&:last-child {
+			margin-right: 0px;
+			border: none;
+		}
+	}
+
+	@media (min-width: @desktop-width) {
+		background-color: transparent;
 	}
 }
 
@@ -58,4 +131,16 @@
 	font-weight: 500;
 	font-size: 20px;
 	line-height: 20px;
+
+	@media (min-width: @tablet-width) {
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 24px;
+	}
+
+	@media (min-width: @desktop-width) {
+		color: @lightest;
+		font-size: 20px;
+		line-height: 30px;
+	}
 }

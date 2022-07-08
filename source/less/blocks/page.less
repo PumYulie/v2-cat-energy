@@ -5,7 +5,17 @@
 .page__body {
 	display: flex;
 	flex-direction: column;
+
+	min-width: 320px;
 	min-height: 100%;
+
+	@media (min-width: @tablet-width) {
+		padding-top: 26px;
+	}
+
+	@media (min-width: @desktop-width) {
+		padding-top: 0;
+	}
 }
 
 .page__main {

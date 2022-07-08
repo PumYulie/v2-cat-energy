@@ -1,16 +1,63 @@
 .first-screen {
 	padding-top: 27px;
+	margin-bottom: 20px;
 
 	background-image: url("../../img/index/index-bg-mobile.png");
 	background-size: 320px auto;
 	background-repeat: no-repeat;
 	background-position: top;
+
+	@media (min-width: @tablet-width) {
+		padding-top: 140px;
+		margin-bottom: 0;
+
+		background-image: none;
+	}
+
+	@media (min-width: @desktop-width) {
+		padding-top: 0;
+		margin-bottom: 82px;
+
+		background-image:
+			linear-gradient(to right, @lightest 50%, rgba(104, 183, 56, 0.85) 50%),
+			url("../../img/index/index-bg-desktop.png");
+		background-size:
+			auto auto,
+			50vw auto;
+		background-repeat:
+			no-repeat,
+			no-repeat;
+		background-position:
+			50% 50%,
+			50vw center;
+	}
+}
+
+.first-screen__wrapper {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+
+	@media (min-width: @desktop-width) {
+		grid-template-columns: repeat(2, 1fr);
+		padding-top: 141px;
+		padding-bottom: 54px;
+	}
 }
 
 .first-screen__title {
-	width: 249px;
 	margin: 0 auto;
 	margin-bottom: 25px;
+
+	@media (min-width: @tablet-width) {
+		margin-bottom: 41px;
+		margin-left: 87px;
+	}
+
+	@media (min-width: @desktop-width) {
+		margin-bottom: 40px;
+		margin-left: 80px;
+		margin-top: 82px;
+	}
 }
 
 .first-screen__description {
@@ -20,22 +67,76 @@
 	font-size: 14px;
 	line-height: 14px;
 	text-align: center;
+
+	@media (min-width: @tablet-width) {
+		.title-font(20px; 20px);
+
+		margin-bottom: 20px;
+		margin-left: 89px;
+
+		color: @darkest;
+		text-align: left;
+	}
+
+	@media (min-width: @desktop-width) {
+		grid-column: ~"1 / 2";
+
+		margin-bottom: 52px;
+		margin-left: 80px;
+	}
 }
 
 .first-screen__image {
 	display: block;
 	width: 280px;
 	height: 270px;
-	margin: 0;
+	margin: 0 auto;
 	margin-bottom: 3px;
+
+	@media (min-width: @tablet-width) {
+		grid-row: ~"3 / 5";
+		grid-column: ~"1 / 2";
+		width: 709px;
+		height: 609px;
+		margin-bottom: 0;
+	}
+
+	@media (min-width: @desktop-width) {
+		margin: 0;
+		grid-column: ~"2 / 3";
+		grid-row: ~"1 / 5";
+		justify-self: start;
+		width: 552px;
+		height: 499px;
+
+		transform: translateX(-162px);
+	}
 }
 
 .first-screen__button {
 	width: 100%;
+	max-width: 280px;
 	margin: 0 auto;
-	margin-bottom: 20px;
 	padding: 7px 10px;
 
 	font-size: 14px;
 	line-height: 18px;
+
+	@media (min-width: @tablet-width) {
+		grid-row: ~"3 / 4";
+		grid-column: ~"1 / 2";
+
+		width: 244px;
+		padding: 14px;
+		margin-left: 90px;
+		margin-top: 29px;
+
+		font-size: 20px;
+		line-height: 20px;
+	}
+
+	@media (min-width: @desktop-width) {
+		margin-top: 0;
+		margin-left: 80px;
+	}
 }

@@ -1,5 +1,6 @@
 .title-base() {
-	margin: 0;
+	margin-top: 0;
+	margin-bottom: 0;
 	padding: 0;
 
 	font-family: "Oswald";
@@ -17,6 +18,10 @@
 .title {
 	.title-base();
 	.title-font(36px; 36px);
+
+	@media (min-width: @tablet-width) {
+		.title-font(60px; 60px);
+	}
 }
 
 .title--form {
@@ -39,4 +44,10 @@
 	.title-font(36px; 36px);
 	color: @lightest;
 	text-align: center;
+
+	@media (min-width: @tablet-width) {
+		.title-font(60px; 60px);
+		color: @darkest;
+		text-align: left;
+	}
 }

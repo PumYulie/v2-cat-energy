@@ -1,7 +1,10 @@
 .detail {
 	width: 124px;
-
 	text-align: center;
+
+	@media (min-width: @tablet-width) {
+		width: 162px;
+	}
 }
 
 .datail__title {
@@ -12,6 +15,14 @@
 
 	font-size: 24px;
 	line-height: 24px;
+
+	@media (min-width: @tablet-width) {
+		padding-top: 15px;
+		padding-bottom: 20px;
+
+		font-size: 30px;
+		line-height: 37px;
+	}
 }
 
 .detail__description {
@@ -24,4 +35,16 @@
 	text-transform: lowercase;
 
 	background-color: @background-grey;
+
+	@media (min-width: @tablet-width) {
+		display: inline-block;
+		width: auto;
+		padding: 0 8px;
+
+		font-size: 14px;
+		line-height: 14px;
+
+		background-color: @lightest;
+		transform: translateY(-15px);
+	}
 }

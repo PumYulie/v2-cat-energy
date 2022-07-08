@@ -1,8 +1,28 @@
 .progress-bar {
 	display: flex;
 	align-items: center;
-
 	width: 210px;
+
+	@media (min-width: @tablet-width) {
+		width: 592px;
+	}
+}
+
+.progress-bar__text {
+	font-size: 16px;
+	line-height: 20px;
+
+	border-bottom: 1px solid transparent;
+
+	@media (min-width: @tablet-width) {
+		margin-top: 4px;
+		margin-bottom: 5px;
+		padding: 0;
+		border-bottom: 1px dashed rgba(0, 0, 0, 0.24);
+
+		font-size: 20px;
+		line-height: 30px;
+	}
 }
 
 .progress-bar__bar {
@@ -12,15 +32,56 @@
 	margin: 0 13px;
 	padding: 3px 6px;
 	border: 1px solid @special-grey;
-	
+
 	border-radius: 6px;
 	background-color: @lightest;
+
+	@media (min-width: @tablet-width) {
+		height: 6px;
+		padding: 0;
+		margin: 17px 23px;
+		border: none;
+
+		background-color: @special-grey;
+	}
 }
 
 .progress-bar__pin {
+	position: relative;
+
 	width: 35px;
 	height: 6px;
 
-	background: @button-bg-color;
+	background-color: @button-bg-color;
 	border-radius: 6px;
+
+	@media (min-width: @tablet-width) {
+		width: 34px;
+		height: 34px;
+		margin: 0 auto;
+		margin-top: -14px;
+
+		border-radius: 50%;
+		background-color: @lightest;
+		border: 1px solid @special-grey;
+	}
+}
+
+.progress-bar__pin::before {
+	@media (min-width: @tablet-width) {
+		content: "";
+
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+
+		width: 8px;
+		height: 8px;
+
+		border-radius: 50%;
+		background-color: @button-bg-color;
+	}
 }

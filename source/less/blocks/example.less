@@ -2,24 +2,59 @@
 	background-color: @background-grey;
 	padding-top: 25px;
 	padding-bottom: 40px;
+
+	@media (min-width: @tablet-width) {
+		background-color: @lightest;
+		background-image: linear-gradient(to top, @background-grey 461px, @lightest 462px);
+		padding-top: 0;
+		padding-bottom: 55px;
+	}
+}
+
+.example__text-content {
+	@media (min-width: @tablet-width) {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		column-gap: 50px;
+
+		margin-bottom: 65px; /* не 80 тк .detail__description сдвинуто вверх на 15px */
+	}
 }
 
 .example__title {
 	margin-bottom: 40px;
 	line-height: 40px;
+
+	@media (min-width: @tablet-width) {
+		grid-column: ~"1/-1";
+
+		margin-bottom: 63px;
+		line-height: 60px;
+	}
 }
 
 .exaple__description {
 	margin: 0;
 	margin-bottom: 20px;
+
+	@media (min-width: @tablet-width) {
+		grid-column: ~"1/-1";
+
+		margin-bottom: 54px;
+		max-width: 700px;
+	}
 }
 
 .example__list {
 	display: flex;
-/* 	max-width: 360px; */
+	margin: 0 auto;
 	margin-bottom: 20px;
 
 	text-align: center;
+
+	@media (min-width: @tablet-width) {
+		margin-bottom: 0;
+	}
 }
 
 .example__item:not(:last-child) {
@@ -38,17 +73,46 @@
 	&-1, &-2 {
 		margin: 0;
 	}
+
+	@media (min-width: @tablet-width) {
+		justify-self: end;
+		align-self: start;
+		margin-top: 11px;
+
+		flex-direction: column;
+		align-items: flex-end;
+		margin-bottom: 0;
+
+		font-size: 20px;
+	}
 }
 
 .example__subtitle-1 {
 	margin-right: 3px;
+
+	@media (min-width: @tablet-width) {
+		margin-bottom: 9px;
+		margin-right: 0;
+	}
 }
+
+/* .example__visual-content {
+	@media (min-width: @tablet-width) {
+
+	}
+} */
 
 .example__image-wrapper {
 	display: grid;
 	grid-template-rows: 232px;
-
 	margin-bottom: 15px;
+
+	@media (min-width: @tablet-width) {
+		width: 592px;
+		height: 511px;
+		margin: 0 auto;
+		margin-bottom: 25px;
+	}
 }
 
 .example__img {
@@ -67,6 +131,12 @@
 
 	&--after {
 		width: 243px;
+	}
+
+	@media (min-width: @tablet-width) {
+		height: 511px;
+		width: auto;
+		background-image: linear-gradient(to top, @background-grey 341px, @lightest 342px);
 	}
 }
 
