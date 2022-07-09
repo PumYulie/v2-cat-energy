@@ -1,4 +1,6 @@
 .contacts {
+	position: relative;
+
 	background-color: @lightest;
 
 	&--catalog { /* у страницы каталог чуть другой футтер */
@@ -9,10 +11,21 @@
 .contacts__text-wrapper {
 	display: flex;
 	justify-content: space-between;
+	flex-shrink: 0;
 	padding: 26px 20px;
+	background-color: @lightest;
 
 	@media (min-width: @tablet-width) {
 		padding: 56px 70px;
+	}
+
+	@media (min-width: @desktop-width) {
+		position: absolute;
+		top: 95px;
+		left: 110px;
+
+		width: 565px;
+		padding: 56px 80px;
 	}
 }
 
@@ -60,6 +73,8 @@
 
 	height: 362px;
 
+	background-color: @special-grey; /* временно */
+
 	@media (min-width: @tablet-width) {
 		height: 400px;
 	}
@@ -73,5 +88,12 @@
 	@media (min-width: @tablet-width) {
 		width: 113px;
 		height: 106px;
+	}
+
+	@media (min-width: @desktop-width) {
+		position: absolute;
+
+		top: 131px;
+		left: 908px;
 	}
 }

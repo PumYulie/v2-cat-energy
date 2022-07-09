@@ -16,6 +16,7 @@
 }
 
 .goals__goal-container {
+	position: relative;
 	padding: 30px 20px 18px 20px;
 	background-color: @basic_grey;
 
@@ -25,6 +26,106 @@
 
 	@media (min-width: @desktop-width) {
 		padding: 77px 51px 55px 52px;
+	}
+}
+
+.goals__goal-container::before {
+	content: "";
+	position: absolute;
+	top: 24px;
+	left: 22px;
+
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: @button-bg-color;
+
+	@media (min-width: @tablet-width) {
+		top: 92px;
+		right: 62px;
+		left: auto;
+
+		width: 200px;
+		height: 200px;
+	}
+
+	@media (min-width: @desktop-width) {
+		top: 47px;
+		left: 52px;
+		right: auto;
+
+		width: 100px;
+		height: 100px;
+	}
+}
+
+.goals__goal-container--loss::after {
+	content: "";
+	position: absolute;
+	top: 21px;
+	left: 29px;
+
+	width: 36px;
+	height: 50px;
+
+	background-image: url("../../img/icons/goals-cat-slim.svg");
+	background-size: 36px 50px;
+	background-repeat: no-repeat;
+	background-position: center center;
+
+	@media (min-width: @tablet-width) {
+		top: 81px;
+		right: 92px;
+		left: auto;
+
+		width: 140px;
+		height: 194px;
+		background-size: 140px 194px;
+	}
+
+	@media (min-width: @desktop-width) {
+		top: 41px;
+		left: 67px;
+		right: auto;
+
+		width: 70px;
+		height: 97px;
+		background-size: 70px 97px;
+	}
+}
+
+.goals__goal-container--gain::after {
+	content: "";
+	position: absolute;
+	top: 35px;
+	left: 13px;
+
+	width: 67px;
+	height: 28px;
+
+	background-image: url("../../img/icons/goals-cat-pro.svg");
+	background-size: 67px 28px;
+	background-repeat: no-repeat;
+	background-position: center center;
+
+	@media (min-width: @tablet-width) {
+		top: 135px;
+		right: 28px;
+		left: auto;
+
+		width: 268px;
+		height: 112px;
+		background-size: 268px 112px;
+	}
+
+	@media (min-width: @desktop-width) {
+		top: 67px;
+		left: 33px;
+		right: auto;
+
+		width: 134px;
+		height: 56px;
+		background-size: 134px 56px;
 	}
 }
 
