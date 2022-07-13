@@ -1,9 +1,62 @@
 .show-more-card {
-	width: 320px;
-	margin: 0 auto;
+	position: relative;
+
+	width: 100%;
+	max-width: 350px;
+	margin-left: auto;
+	margin-right: auto;
 	padding: 25px 20px;
 	border-top: 1px solid @separator-grey;
 	border-bottom: 1px solid @separator-grey;
+
+	&::before {
+		content: "";
+		position: absolute;
+/* 		top: 67px; */
+		top: 40px;
+
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+
+		width: 30px;
+		height: 2px;
+		background-color: @separator-grey;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 40px;
+/* 		top: 67px; */
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+
+		width: 30px;
+		height: 2px;
+		background-color: @separator-grey;
+		transform: rotate(90deg);
+	}
+
+	@media (min-width: @tablet-width) {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+
+		border: 2px solid @basic_grey;
+		padding: 52px 37px 38px 37px;
+
+		&::before {
+			top: 82px;
+			width: 60px;
+		}
+
+		&::after {
+			top: 82px;
+			width: 60px;
+		}
+	}
 }
 
 .show-more-card__title {
@@ -14,22 +67,53 @@
 	line-height: 20px;
 	text-align: center;
 
-	background-image: url("./../../img/icons/catalog-card-plus.svg");
-	background-repeat: no-repeat;
-	background-size: 30px 30px;
-	background-position: center top;
+	& br {
+		display: none;
+	}
+
+	@media (min-width: @tablet-width) {
+		max-width: 250px;
+		margin-bottom: 23px;
+		padding-top: 109px;
+
+		font-size: 20px;
+		line-height: 22px;
+
+		background-image: none;
+
+		& br {
+			display: block;
+		}
+	}
 }
 
 .show-more-card__description {
+	margin: 0;
 	margin-bottom: 21px;
 
 	font-size: 12px;
 	line-height: 16px;
 	text-align: center;
+
+	& br {
+		display: none;
+	}
+
+	@media (min-width: @tablet-width) {
+		max-width: 250px;
+
+		font-size: 16px;
+		line-height: 18px;
+
+		& br {
+			display: block;
+		}
+	}
 }
 
 .show-more-card__button {
-	width: 280px;
+	width: 100%;
+	margin-top: auto;
 
 	font-size: 16px;
 	line-height: 20px;

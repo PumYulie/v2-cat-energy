@@ -13,6 +13,18 @@
 	background-repeat: no-repeat;
 	background-size: 78px 80px;
 	background-position: center top 59px;
+
+	@media (min-width: @tablet-width) {
+		height: 200px;
+		background-size: 80px 83px;
+		background-position: left 77px top 57px;
+	}
+
+	@media (min-width: @desktop-width) {
+		height: 100%;
+		background-size: 80px 82px;
+		background-position: center top 56px;
+	}
 }
 
 .special__description {
@@ -25,4 +37,22 @@
 	font-size: 16px;
 	line-height: 20px;
 	text-align: center;
+
+	@media (min-width: @tablet-width) {
+		margin: 0;
+		padding-top: 71px;
+		padding-bottom: 69px;
+		margin-right: 124px;
+		margin-left: auto;
+
+		text-align: start;
+	}
+
+	@media (min-width: @desktop-width) {
+		padding-top: 185px;
+		padding-bottom: 42px;
+		margin: 0 auto;
+
+		text-align: center;
+	}
 }

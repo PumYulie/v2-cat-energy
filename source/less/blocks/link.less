@@ -1,5 +1,5 @@
 .link-base() {
-	display: block;
+	display: inline-block;
 	margin: 0;
 
 	font-family: "Oswald";
@@ -11,6 +11,11 @@
 
 	background-color: transparent;
 	border: none;
+	cursor: pointer;
+}
+
+.link {
+	.link-base();
 
 	&:hover {
 		opacity: 0.6;
@@ -19,10 +24,6 @@
 	&:active {
 		opacity: 0.3;
 	}
-}
-
-.link {
-	.link-base();
 }
 
 .link--goals {
@@ -37,7 +38,29 @@
 	}
 }
 
-/* под сомнением нужен ли, зависит от состояний активности */
 .link--progress-bar {
 	.link-base();
+	position: relative;
+
+	@media (min-width: @tablet-width) {
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: -1px;
+			left: 0;
+			right: 0;
+
+			height: 1px;
+			background-image: repeating-linear-gradient(to right, fade(@darkest, 24%), fade(@darkest, 24%) 1px, transparent 1px, transparent 2px);
+		}
+
+		&:hover::after {
+			background-color: fade(@darkest, 40%);
+			background-image: none;
+		}
+
+		&:active::after {
+			background-color: transparent;
+		}
+	}
 }
