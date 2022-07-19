@@ -1,8 +1,29 @@
 .special {
-	background-image: url("../../img/catalog/mobile/special-background-mobile.png");
+	background-image: url("../../img/catalog/special-bg-mobile.png");
 	background-size: 279px 289px;
 	background-position: center;
 	background-repeat: no-repeat;
+
+	@media (min-resolution: 2dppx) {
+		background-image: url("../../img/catalog/special-bg-mobile@2x.png");
+	}
+
+	@media (min-width: @tablet-width) {
+		background-image: url("../../img/catalog/special-bg-tablet.png");
+		background-size: 100% auto;
+
+		@media (min-resolution: 2dppx) {
+			background-image: url("../../img/catalog/special-bg-tablet@2x.png");
+		}
+	}
+
+	@media (min-width: @desktop-width) {
+		background-image: url("../../img/catalog/special-bg-desktop.png");
+
+		@media (min-resolution: 2dppx) {
+			background-image: url("../../img/catalog/special-bg-desktop@2x.png");
+		}
+	}
 }
 
 .special__cover {

@@ -1,8 +1,24 @@
 .upsale {
+	position: relative;
 	margin-bottom: 35px;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 15px;
+		left: 0;
+		right: 0;
+		z-index: -1;
+		height: 2px;
+		background-color: @button-bg-color;
+	}
 
 	@media (min-width: @tablet-width) {
 		margin-bottom: 76px;
+
+		&::before {
+			top: 22px;
+		}
 	}
 
 	@media (min-width: @desktop-width) {
@@ -22,22 +38,33 @@
 	font-size: 24px;
 	line-height: 24px;
 
+	transform: translateX(-20px);
+
+	& span {
+		padding: 0 20px;
+		background-color: @lightest;
+	}
+
 	@media (min-width: @tablet-width) {
-		display: inline;
 		margin-bottom: 80px;
-		padding: 0 36px;
 
 		font-size: 36px;
 		line-height: 36px;
 
-		background-color: @lightest;
+		transform: translateX(0px);
+
+		& span {
+			padding: 0 36px;
+		}
 	}
 
 	@media (min-width: @desktop-width) {
-		display: inline;
-		margin-bottom: 81px;
-		margin-left: -45px;
-		padding: 0 45px;
+		margin-bottom: 79px;
+		transform: translateX(-41px);
+
+		& span {
+			padding: 0 41px;
+		}
 	}
 }
 
@@ -56,7 +83,7 @@
 	}
 
 	@media (min-width: @desktop-width) {
-		width: 73%;
+		width: 73.5%;
 		margin-bottom: 0;
 	}
 }
@@ -74,7 +101,7 @@
 
 	@media (min-width: @desktop-width) {
 		&:not(:last-child) {
-			margin-bottom: 16px;
+			margin-bottom: 15px;
 		}
 
 		&:last-child {

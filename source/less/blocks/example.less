@@ -163,17 +163,24 @@
 	}
 }
 
-.example__img {
+.example__cat-before-wrapper {
 	grid-column: ~"1 / 2";
 	grid-row: ~"1 / 2";
+	z-index: 1;
+}
 
+.example__cat-after-wrapper {
+	grid-column: ~"1 / 2";
+	grid-row: ~"1 / 2";
+}
+
+.example__img {
 	height: 232px;
 	margin: 0 auto;
 
 	background-color: @background-grey;
 
 	&--before {
-		z-index: 1;
 		width: 280px;
 	}
 

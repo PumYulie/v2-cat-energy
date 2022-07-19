@@ -27,8 +27,21 @@
 	text-transform: uppercase;
 }
 
-.input__checkbox-mark {
+.input__checkbox:checked + .input__checkbox-mark::before {
+	content: "";
+	width: 26px;
+	height: 26px;
 	display: block;
+	background-image: url("../../img/icons/form-checkbox-tick.svg");
+	background-size: 26px 26px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.input__checkbox-mark {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	width: 30px;
 	height: 30px;

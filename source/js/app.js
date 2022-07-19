@@ -1,8 +1,25 @@
-/* эта кнопка не нужна)) она просто ссылка)) */
-const firstScreenBtn = document.querySelector(".first-screen__button");
+/* DOM-элементы */
 
-const onOrderButtonClick = function (event) {
-	event.target
-/* когда кликнули в корзине отправить заявку */
+/* в form.html финальная кнопка */
+const firstScreenBtn = document.querySelector(".form__button");
+
+const menuToggle = document.querySelector(".menu-toggle");
+const siteHeaderNavigation = document.querySelector(".page-header__navigation");
+
+
+/* функции-обработчики */
+
+/* кликнули в корзине отправить заявку */
+const onSubmitOrderClick = function (evt) {
+
 }
 
+const onMenuToggleClick = function () {
+	siteHeaderNavigation.classList.remove("page-header__navigation--nojs");
+
+	if ()
+}
+
+/* навешиваю счетчики */
+firstScreenBtn.addEventListener("click", onSubmitOrderClick);
+menuToggle.addEventListener("click", onMenuToggleClick);
