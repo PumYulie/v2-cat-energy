@@ -33,6 +33,7 @@
 
 .socials__svg {
 	display: block;
+	color: #666;
 }
 
 .socials__link {
@@ -41,20 +42,11 @@
 	justify-content: center;
 
 	&:hover > .socials__svg {
-		fill: @button-bg-color;
-	}
-
-	&--fb:hover > .socials__svg path {
-		stroke: @button-bg-color;
+		color: @button-bg-color;
 	}
 
 	&:active > .socials__svg {
-		fill: @button-bg-color;
-		opacity: 0.3;
-	}
-
-	&--fb:active > .socials__svg path {
-		stroke: @button-bg-color;
+		color: @button-bg-color;
 		opacity: 0.3;
 	}
 }

@@ -26,6 +26,7 @@
 	@media (min-width: @tablet-width) {
 		margin: 0;
 		margin-right: 25px;
+		flex-shrink: 0;
 	}
 }
 
@@ -41,6 +42,10 @@
 	}
 }
 
+.page-footer__dev-logo-svg {
+	color: #666;
+}
+
 .page-footer__dev-link {
 	display: flex;
 	justify-content: space-between;
@@ -48,9 +53,9 @@
 	flex-shrink: 0;
 	padding-top: 22px;
 
-	&:hover .page-footer__dev-logo,
-	&:active .page-footer__dev-logo {
-		fill: @button-bg-color;
+	&:hover .page-footer__dev-logo-svg,
+	&:active .page-footer__dev-logo-svg {
+		color: @button-bg-color;
 	}
 
 	&:active {

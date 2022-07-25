@@ -1,26 +1,25 @@
 .menu-toggle {
-	min-width: 24px;
-	min-height: 18px;
-	padding: 8px 0 8px 8px;
+	min-width: 40px; /* учла оба паддинга */
+	min-height: 34px; /* учла оба паддинга */
+	padding: 8px;
 	margin: 0;
 
 	background-color: transparent;
 	border: none;
 }
 
-.menu-toggle__svg--burger {
-	display: none;
+.menu-toggle__svg {
 	width: 24px;
 	height: 18px;
+	margin-top: 3px;
 }
 
-.menu-toggle__svg--close {
-	display: none;
-	width: 18px;
-	height: 18px;
+.menu-toggle__svg--close-icon {
+	width: 20px;
+	height: 20px;
 }
 
-/* навесить класс через js при клике */
-.menu-toggle__svg--current {
+/* навешиваю класс на .menu-toggle при клике по кнопке .menu-toggle */
+.menu-toggle--menu-openned {
 	display: block;
 }

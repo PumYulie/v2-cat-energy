@@ -3,14 +3,16 @@
 	display: grid;
 	grid-template-columns: auto 1fr 34px;
 
+	height: 65px;
 	padding-top: 10px;
-	padding-bottom: 17px;
+	padding-bottom: 15px;
 
 	@media (min-width: @tablet-width) {
 		display: flex;
 		justify-content: space-between;
 		align-items: baseline;
 
+		height: auto;
 		padding-top: 0;
 		padding-bottom: 0;
 	}
@@ -45,8 +47,8 @@
 .page-header__logo-name-link {
 	grid-column: ~"2 / 3";
 	justify-self: center;
-	align-self: end;
 	display: block;
+	margin-top: 5px;
 
 	@media (min-width: @tablet-width) {
 		display: none;
@@ -70,6 +72,8 @@
 }
 
 .page-header__menu-toggle {
+	transform: translateX(8px);
+
 	@media (min-width: @tablet-width) {
 		display: none;
 	}
@@ -98,12 +102,13 @@
 /* ВЕРНУТЬ КЛАСС page-header__navigation--nojs В РАЗМЕТКУ!!!! */
 .page-header__navigation--nojs {
 	@media (max-width: @mobile-width-only) {
-		& .page-header__menu-toggle {
+/* 		& .page-header__menu-toggle {
 			display: none;
 		}
 
 		& .page-header__menu-list {
 			display: none;
-		}
+		} */
+		display: none;
 	}
 }
