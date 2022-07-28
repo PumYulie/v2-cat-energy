@@ -171,40 +171,35 @@
 }
 
 .goals__button {
-	width: 135px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 4px 0px;
+	padding: 4px 48px 4px 0;
+	min-width: 132px;
 
 	font-size: 16px;
 	line-height: 16px;
 
-	&:hover .goals__button-mark,
-	&:active .goals__button-mark {
+	background-image: url("../../img/icons/button-arrow.svg");
+	background-repeat: no-repeat;
+	background-position: right, center;
+	background-size: 34px 12px;
+
+	&:hover {
 		background-image: url("../../img/icons/button-arrow-hover.svg");
 	}
 
+	&:active {
+		background-image: url("../../img/icons/button-arrow-hover.svg");
+		opacity: 0.3;
+	}
+
 	@media (min-width: @tablet-width) {
-		width: 161px;
+		min-width: 161px;
+		padding-right: 57px;
 		font-size: 20px;
 		line-height: 30px;
 	}
 
 	@media (min-width: @desktop-width) {
-		width: 168px;
+		min-width: 163px;
+		padding-right: 60px;
 	}
-}
-
-.goals__button-mark {
-	display: block;
-	min-width: 32px;
-	height: 10px;
-	margin: 0;
-	padding: 0;
-
-	background-image: url("../../img/icons/button-arrow.svg");
-	background-repeat: no-repeat;
-	background-position: left, center;
-	background-size: 32px 10px;
 }

@@ -76,7 +76,6 @@
 					<p class="goals__description">Ваш кот весит больше собаки и почти утратил способность лазить по деревьям? Пора на диету! Cat Energy Slim поможет вашему питомцу сбросить лишний вес.</p>
 					<a class="goals__button link--goals" href="catalog.html#slim-catalog-section">
 						Каталог slim
-						<span class="goals__button-mark"></span>
 					</a>
 				</article>
 				<article class="goals__goal-container goals__goal-container--gain">
@@ -84,7 +83,6 @@
 					<p class="goals__description">Заработать авторитет среди дворовых котов и даже собак? Серия Cat Energy Pro поможет вашему коту нарастить необходимые мышцы!</p>
 					<a class="goals__button link--goals" href="catalog.html#pro-catalog-section">
 						Каталог pro
-						<span class="goals__button-mark"></span>
 					</a>
 				</article>
 			</section>
@@ -134,26 +132,29 @@
 
 					<div class="example__visual-content">
 						<div class="example__image-wrapper">
-							<div class="example__cat-before-wrapper">
+							<div class="example__cat--before example__cat--active">
 								<picture>
 									<source media="(min-width: 768px)" srcset="./img/index/cat-before-tablet.png 1x, ./img/index/cat-before-tablet@2x.png 2x">
-									<img class="example__img example__img--before" width="311" height="232" src="./img/index/cat-before-mobile.png" srcset="./img/index/cat-before-mobile@2x.png 2x" alt="Толстый кот">
+									<img class="example__img example__img--before" width="280" height="232" src="./img/index/cat-before-mobile.png" srcset="./img/index/cat-before-mobile@2x.png 2x" alt="Толстый кот">
 								</picture>
 							</div>
-							<div class="example__cat-after-wrapper">
+							<div class="example__cat--after">
 								<picture>
 									<source media="(min-width: 768px)" srcset="./img/index/cat-after-tablet.png 1x, ./img/index/cat-after-tablet@2x.png 2x">
-									<img class="example__img example__img--after" width="251" height="240" src="./img/index/cat-after-mobile.png" srcset="./img/index/cat-after-mobile@2x.png 2x" alt="Стройный кот">
+									<img class="example__img example__img--after" width="243" height="232" src="./img/index/cat-after-mobile.png" srcset="./img/index/cat-after-mobile@2x.png 2x" alt="Стройный кот">
 								</picture>
 							</div>
 						</div>
 
 						<div class="example__progress-wrapper progress-bar">
-							<button class="progress-bar__text link--progress-bar" type="button">Было</button>
-							<div class="progress-bar__bar">
-								<div class="progress-bar__pin"></div>
+							<button class="progress-bar__button progress-bar__button--before link--progress-bar" type="button" disabled>Было</button>
+							<div class="progress-bar__bar-wrapper">
+								<label class="progress-bar__input-label" for="progress-bar-range">
+									<div class="progress-bar__pin"></div>
+									<input class="progress-bar__input" id="progress-bar-range" type="range" min="0" max="100" value="50" step="1">
+								</label>
 							</div>
-							<button class="progress-bar__text link--progress-bar" type="button">Стало</button>
+							<button class="progress-bar__button progress-bar__button--after link--progress-bar" type="button">Стало</button>
 						</div>
 					</div>
 				</div>
@@ -173,8 +174,8 @@
 					</div>
 				</div>
 				<div class="contacts__map-container">
-					<iframe class="contacts__map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2246.350546885131!2d37.795303026953135!3d55.735037999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414aca814c8cc971%3A0x3547674f6c569662!2sPark%20Kuskovo!5e0!3m2!1sen!2sru!4v1657730207034!5m2!1sen!2sru" width="100%" height="362" allowfullscreen title="Адрес магазина Cat Energy">
-					</iframe>
+				<!-- 	<iframe class="contacts__map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2246.350546885131!2d37.795303026953135!3d55.735037999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414aca814c8cc971%3A0x3547674f6c569662!2sPark%20Kuskovo!5e0!3m2!1sen!2sru!4v1657730207034!5m2!1sen!2sru" width="100%" height="362" allowfullscreen title="Адрес магазина Cat Energy">
+					</iframe> -->
 					<img class="contacts__map-pin" width="113" height="106" src="./img/index/map-pin.png" alt="Указатель расположения магазина Cat Energy на карте">
 				</div>
 			</section>
@@ -222,6 +223,7 @@
 		</footer>
 
 		<script src="./js/app.js"></script>
+		<script src="./js/progress-bar.js"></script>
   </body>
 
 </html>

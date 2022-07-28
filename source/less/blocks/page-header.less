@@ -28,6 +28,18 @@
 	}
 }
 
+.page-header__logo-pic-link {
+	cursor: pointer;
+
+	&:hover {
+		opacity: 0.8;
+	}
+
+	&:active {
+		opacity: 0.6;
+	}
+}
+
 .page-header__logo-pic{
 	display: block;
 	width: 33px;
@@ -49,6 +61,14 @@
 	justify-self: center;
 	display: block;
 	margin-top: 5px;
+
+	&:hover {
+		opacity: 0.8;
+	}
+
+	&:active {
+		opacity: 0.6;
+	}
 
 	@media (min-width: @tablet-width) {
 		display: none;

@@ -152,54 +152,33 @@
 }
 
 .example__image-wrapper {
-	display: grid;
-	grid-template-rows: 232px;
+	height: 232px;
+	margin: 0 auto;
 	margin-bottom: 18px;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-	@media (min-width: @tablet-width) {
-		grid-template-rows: auto;
-		width: 707px;
-		height: auto;
-		margin: 0 auto;
-		margin-bottom: 19px;
+.example__cat--before,
+.example__cat--after {
+	@media (max-width: @mobile-width-only) {
+		display: none;
 	}
 }
 
-.example__cat-before-wrapper {
-	grid-column: ~"1 / 2";
-	grid-row: ~"1 / 2";
-/* 	z-index: 1; */
-
-	@media (min-width: @tablet-width) {
-		padding-left: 58px;
-		box-sizing: content-box;
-	}
-
-	@media (min-width: @desktop-width) {
-		padding-left: 0;
-	}
-}
-
-.example__cat-after-wrapper {
-	grid-column: ~"1 / 2";
-	grid-row: ~"1 / 2";
-	z-index: 1;
-
-	@media (min-width: @tablet-width) {
-		padding-left: 115px;
-		box-sizing: content-box;
-	}
-
-	@media (min-width: @tablet-width) {
-		padding-left: 58px;
+/* класс только для мобилки */
+.example__cat--active {
+	@media (max-width: @mobile-width-only) {
+		display: block;
 	}
 }
 
 .example__img {
 	height: 232px;
-	margin: 0 auto;
-
+	display: block;
 	background-color: @background-grey;
+	pointer-events: none;
 
 	&--before {
 		width: 280px;
@@ -208,34 +187,107 @@
 	&--after {
 		width: 243px;
 	}
+}
 
-	@media (min-width: @tablet-width) {
-		background-image: linear-gradient(to top, @background-grey 341px, @lightest 342px);
 
-		&--before {
-			width: 707px;
-			height: auto;
-		}
 
-		&--after {
-			width: 535px;
-			height: auto;
-		}
+
+
+
+/* сложное позиционирование, рассматриваю в разрешениях */
+@media (min-width: @tablet-width) {
+	.example__image-wrapper {
+		position: relative;
+		height: 520px;
+    width: 680px;
+		margin-bottom: 16px;
+		overflow: hidden;
 	}
 
-	@media (min-width: @desktop-width) {
-		background-image: linear-gradient(to bottom, @lightest 179px, @background-grey 179px);
+	.example__cat--before {   /* родитель с заданными размерами */
+		position: absolute;
+    top: 0;
+    left: 0;
+		z-index: 1;
 
-		&--before {
-			width: 650px;
-		}
+    width: 340px;
+		height: 100%;
+		overflow: hidden;
+	}
+
+	.example__cat--after {
+		position: absolute;
+    right: 0;
+    align-self: end;
+
+		width: 340px;
+		height: 100%;
+		overflow: hidden;
+	}
+
+	.example__img {
+		background-color: transparent;
+	}
+
+	.example__img--before {
+		position: absolute;
+    left: 44px;
+
+		width: auto;
+		max-width: none;
+    height: 499px;
+	}
+
+	.example__img--after {
+		position: absolute;
+    right: 43px; /* top?? */
+
+		width: auto;
+		max-width: none;
+    height: 511px;
 	}
 }
+
+
+
+
+@media (min-width: @desktop-width) {
+	.example__image-wrapper {
+		width: 595px;
+	}
+
+	.example__cat--before {
+		width: 298px;
+	}
+
+	.example__img--before {
+		left: 2px;
+	}
+
+	.example__cat--after {
+		width: 298px;
+	}
+
+	.example__img--after {
+		right: 2px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .example__progress-wrapper {
 	margin: 0 auto;
 
-	@media (min-width: @desktop-width) {
+	@media (min-width: @tablet-width) {
 		padding-left: 5px;
 	}
 }

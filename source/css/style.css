@@ -329,6 +329,13 @@ ol {
   cursor: pointer;
   position: relative;
 }
+.link--progress-bar:active {
+  opacity: 0.3;
+}
+.link--progress-bar:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
 @media (min-width: 768px) {
   .link--progress-bar::after {
     content: "";
@@ -345,6 +352,9 @@ ol {
   }
   .link--progress-bar:active::after {
     background-color: transparent;
+  }
+  .link--progress-bar:disabled::after {
+    display: none;
   }
 }
 /* blocks header */
@@ -376,6 +386,15 @@ ol {
     right: 0;
   }
 }
+.page-header__logo-pic-link {
+  cursor: pointer;
+}
+.page-header__logo-pic-link:hover {
+  opacity: 0.8;
+}
+.page-header__logo-pic-link:active {
+  opacity: 0.6;
+}
 .page-header__logo-pic {
   display: block;
   width: 33px;
@@ -398,6 +417,12 @@ ol {
   justify-self: center;
   display: block;
   margin-top: 5px;
+}
+.page-header__logo-name-link:hover {
+  opacity: 0.8;
+}
+.page-header__logo-name-link:active {
+  opacity: 0.6;
 }
 @media (min-width: 768px) {
   .page-header__logo-name-link {
@@ -580,6 +605,13 @@ ol {
   display: block;
   width: 128px;
   margin: 39px auto 31px auto;
+  cursor: pointer;
+}
+.page-footer__logo:hover {
+  opacity: 0.8;
+}
+.page-footer__logo:active {
+  opacity: 0.6;
 }
 @media (min-width: 768px) {
   .page-footer__logo {
@@ -771,7 +803,7 @@ ol {
     text-align: end;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 1440px) {
   .contacts__address {
     text-align: start;
   }
@@ -1159,40 +1191,35 @@ ol {
   }
 }
 .goals__button {
-  width: 135px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 4px 0px;
+  padding: 4px 48px 4px 0;
+  min-width: 132px;
   font-size: 16px;
   line-height: 16px;
+  background-image: url("../../img/icons/button-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: right, center;
+  background-size: 34px 12px;
 }
-.goals__button:hover .goals__button-mark,
-.goals__button:active .goals__button-mark {
+.goals__button:hover {
   background-image: url("../../img/icons/button-arrow-hover.svg");
+}
+.goals__button:active {
+  background-image: url("../../img/icons/button-arrow-hover.svg");
+  opacity: 0.3;
 }
 @media (min-width: 768px) {
   .goals__button {
-    width: 161px;
+    min-width: 161px;
+    padding-right: 57px;
     font-size: 20px;
     line-height: 30px;
   }
 }
 @media (min-width: 1440px) {
   .goals__button {
-    width: 168px;
+    min-width: 163px;
+    padding-right: 60px;
   }
-}
-.goals__button-mark {
-  display: block;
-  min-width: 32px;
-  height: 10px;
-  margin: 0;
-  padding: 0;
-  background-image: url("../../img/icons/button-arrow.svg");
-  background-repeat: no-repeat;
-  background-position: left, center;
-  background-size: 32px 10px;
 }
 .advantages {
   margin-bottom: 49px;
@@ -1240,7 +1267,7 @@ ol {
 @media (min-width: 1440px) {
   .advantages__list {
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 77px;
+    column-gap: 80px;
   }
 }
 .advantages__item {
@@ -1475,55 +1502,30 @@ ol {
   }
 }
 .example__image-wrapper {
-  display: grid;
-  grid-template-rows: 232px;
+  height: 232px;
+  margin: 0 auto;
   margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-@media (min-width: 768px) {
-  .example__image-wrapper {
-    grid-template-rows: auto;
-    width: 707px;
-    height: auto;
-    margin: 0 auto;
-    margin-bottom: 19px;
+@media (max-width: 767px) {
+  .example__cat--before,
+  .example__cat--after {
+    display: none;
   }
 }
-.example__cat-before-wrapper {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  /* 	z-index: 1; */
-}
-@media (min-width: 768px) {
-  .example__cat-before-wrapper {
-    padding-left: 58px;
-    box-sizing: content-box;
-  }
-}
-@media (min-width: 1440px) {
-  .example__cat-before-wrapper {
-    padding-left: 0;
-  }
-}
-.example__cat-after-wrapper {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  z-index: 1;
-}
-@media (min-width: 768px) {
-  .example__cat-after-wrapper {
-    padding-left: 115px;
-    box-sizing: content-box;
-  }
-}
-@media (min-width: 768px) {
-  .example__cat-after-wrapper {
-    padding-left: 58px;
+/* класс только для мобилки */
+@media (max-width: 767px) {
+  .example__cat--active {
+    display: block;
   }
 }
 .example__img {
   height: 232px;
-  margin: 0 auto;
+  display: block;
   background-color: #EAEAEA;
+  pointer-events: none;
 }
 .example__img--before {
   width: 280px;
@@ -1531,31 +1533,73 @@ ol {
 .example__img--after {
   width: 243px;
 }
+/* сложное позиционирование, рассматриваю в разрешениях */
 @media (min-width: 768px) {
+  .example__image-wrapper {
+    position: relative;
+    height: 520px;
+    width: 680px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+  .example__cat--before {
+    /* родитель с заданными размерами */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 340px;
+    height: 100%;
+    overflow: hidden;
+  }
+  .example__cat--after {
+    position: absolute;
+    right: 0;
+    align-self: end;
+    width: 340px;
+    height: 100%;
+    overflow: hidden;
+  }
   .example__img {
-    background-image: linear-gradient(to top, #EAEAEA 341px, #ffffff 342px);
+    background-color: transparent;
   }
   .example__img--before {
-    width: 707px;
-    height: auto;
+    position: absolute;
+    left: 44px;
+    width: auto;
+    max-width: none;
+    height: 499px;
   }
   .example__img--after {
-    width: 535px;
-    height: auto;
+    position: absolute;
+    right: 43px;
+    /* top?? */
+    width: auto;
+    max-width: none;
+    height: 511px;
   }
 }
 @media (min-width: 1440px) {
-  .example__img {
-    background-image: linear-gradient(to bottom, #ffffff 179px, #EAEAEA 179px);
+  .example__image-wrapper {
+    width: 595px;
+  }
+  .example__cat--before {
+    width: 298px;
   }
   .example__img--before {
-    width: 650px;
+    left: 2px;
+  }
+  .example__cat--after {
+    width: 298px;
+  }
+  .example__img--after {
+    right: 2px;
   }
 }
 .example__progress-wrapper {
   margin: 0 auto;
 }
-@media (min-width: 1440px) {
+@media (min-width: 768px) {
   .example__progress-wrapper {
     padding-left: 5px;
   }
@@ -1613,19 +1657,21 @@ ol {
 .progress-bar {
   display: flex;
   align-items: center;
-  width: 210px;
+  min-width: 210px;
+  max-width: 300px;
 }
 @media (min-width: 768px) {
   .progress-bar {
-    width: 572px;
+    width: 575px;
+    max-width: 575px;
   }
 }
-.progress-bar__text {
+.progress-bar__button {
   font-size: 16px;
   line-height: 20px;
 }
 @media (min-width: 768px) {
-  .progress-bar__text {
+  .progress-bar__button {
     padding: 0;
     padding-top: 4px;
     margin-bottom: auto;
@@ -1633,7 +1679,8 @@ ol {
     line-height: 30px;
   }
 }
-.progress-bar__bar {
+.progress-bar__bar-wrapper {
+  position: relative;
   flex-grow: 1;
   height: 14px;
   margin: 0 13px;
@@ -1641,10 +1688,9 @@ ol {
   border: 1px solid #CDCDCD;
   border-radius: 6px;
   background-color: #ffffff;
-  cursor: pointer;
 }
 @media (min-width: 768px) {
-  .progress-bar__bar {
+  .progress-bar__bar-wrapper {
     height: 6px;
     padding: 0;
     margin: 17px 23px;
@@ -1652,23 +1698,49 @@ ol {
     background-color: #CDCDCD;
   }
 }
+.progress-bar__input-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.progress-bar__input {
+  opacity: 0;
+  /*  Cкрываю исходный синий input, visually-hidden  не работает */
+  width: 100%;
+  margin: 0;
+  border: none;
+  height: 100%;
+}
 .progress-bar__pin {
-  position: relative;
-  width: 35px;
+  position: absolute;
+  left: 6px;
+  display: block;
+  width: calc(50% - 6px);
   height: 6px;
   background-color: #68B738;
   border-radius: 6px;
-  cursor: pointer;
+  cursor: grab;
 }
 @media (min-width: 768px) {
   .progress-bar__pin {
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 34px;
     height: 34px;
-    margin: 0 auto;
-    margin-top: -14px;
     border-radius: 50%;
     background-color: #ffffff;
     border: 1px solid #CDCDCD;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.16);
+  }
+  .progress-bar__pin:hover {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.19);
+  }
+  .progress-bar__pin:active {
+    border: 1px solid #68B738;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
   }
 }
 @media (min-width: 768px) {
@@ -1684,6 +1756,7 @@ ol {
     height: 8px;
     border-radius: 50%;
     background-color: #68B738;
+    cursor: grab;
   }
 }
 /* blocks catalog */

@@ -42,6 +42,15 @@
 	.link-base();
 	position: relative;
 
+	&:active {
+		opacity: 0.3;
+	}
+
+	&:disabled {
+		opacity: 0.3;
+		cursor: default;
+	}
+
 	@media (min-width: @tablet-width) {
 		&::after {
 			content: "";
@@ -61,6 +70,10 @@
 
 		&:active::after {
 			background-color: transparent;
+		}
+
+		&:disabled::after {
+			display: none;
 		}
 	}
 }
