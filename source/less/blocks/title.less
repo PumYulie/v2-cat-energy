@@ -30,9 +30,13 @@
 	.title-font(24px; 26px);
 	display: inline-block;
 	margin: 0;
-	padding-left: 20px;
-	padding-right: 20px;
+	padding: 0px 20px;
 	background-color: @lightest;
+
+	@media (min-width: @tablet-width) {
+		.title-font(36px; 36px);
+		padding: 0px 39px;
+	}
 }
 
 .title--style {

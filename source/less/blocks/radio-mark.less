@@ -4,9 +4,22 @@
 
 	width: 30px;
 	height: 30px;
-	border: 1px solid @special-grey;
+	border: 1px solid @separator-menu-grey;
 	border-radius: 50%;
 	background-color: @lightest;
+
+	@media (min-width: @tablet-width) {
+		width: 40px;
+		height: 40px;
+	}
+
+	&:focus {
+		border: 2px solid @special-dark-grey;
+	}
+
+	&:hover {
+		border: 1px solid @special-grey;
+	}
 }
 
 .radio-mark::before{
@@ -24,4 +37,9 @@
 	height: 13px;
 	border-radius: 50%;
 	background-color: @button-bg-color;
+
+	@media (min-width: @tablet-width) {
+		width: 18px;
+		height: 18px;
+	}
 }

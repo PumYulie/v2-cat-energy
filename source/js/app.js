@@ -1,22 +1,14 @@
 const headerNavigation = document.querySelector(".page-header__navigation");
-const formSubmitButton = document.querySelector(".form__button");
 const menuToggle = document.querySelector(".page-header__menu-toggle"); /* кнопка меню */
 const menuToggleSvg = document.querySelector(".menu-toggle__svg");
 const mobileMenuList = document.querySelector(".page-header__menu-list");
 
+/* убираю блокировки элементов раз js подгрузился */
 if (headerNavigation.classList.contains("page-header__navigation--nojs")) {
 	headerNavigation.classList.remove("page-header__navigation--nojs");
 }
 
-/* СДЕЛАТЬ НАДПИСЬ */
-if (formSubmitButton) {
-	if (formSubmitButton.hasAttribute("disabled")) {
-		formSubmitButton.removeAttribute("disabled");
-	/* 	убрать полоску, которая говорит что-нибудь про извините, просим перезагрузить сайт */
-	}
-	formSubmitButton.addEventListener("click", evt => onSubmitOrderClick(evt));
-}
-
+/* счетчики и обработчики в header */
 const onMenuToggleClick = function (evt) {
 	console.log(evt);
 	/* если меню открыто = на кнопке висит сигнальный класс --menu-openned */
@@ -37,10 +29,6 @@ const onMenuToggleClick = function (evt) {
 		menuToggle.lastElementChild.textContent = "Закрыть меню сайта";
 		mobileMenuList.classList.add("page-header__menu-list--opened");
 	}
-}
-
-const onSubmitOrderClick = function (evt) {
-	alert(evt.target);
 }
 
 menuToggle.addEventListener("click", evt => onMenuToggleClick(evt));

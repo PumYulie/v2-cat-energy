@@ -10,9 +10,22 @@
 	font-size: 16px;
 	line-height: 18px;
 	color: @special-dark-grey;
+
+	@media (min-width: @tablet-width) {
+		min-height: 174px;
+		padding: 9px 12px 9px 18px;
+		font-size: 20px;
+		line-height: 30px;
+	}
 }
 
 .form-comment__title {
+	margin: 0;
 	margin-bottom: 38px;
 	transform: translateX(-20px);
+
+	@media (min-width: @tablet-width) {
+		margin-bottom: 74px;
+		transform: translateX(-40px);
+	}
 }

@@ -1,23 +1,47 @@
 .program-choice {
 	padding-top: 27px;
 	border-top: 1px solid @separator-form;
-}
+	overflow: hidden;
 
-.program-choice__title,
-.program-choice__description {
-	width: 320px;  /* временно!!!! */
-	margin: 0 auto;
-	padding: 0 20px;
+	@media (min-width: @tablet-width) {
+		border: none;
+	}
+
+	@media (min-width: @desktop-width) {
+		margin-top: 150px;
+		padding-top: 0;
+	}
 }
 
 .program-choice__title {
 	margin-bottom: 37px;
+
+	@media (min-width: @tablet-width) {
+		margin-top: 37px;
+		margin-bottom: 54px;
+	}
 }
 
 .program-choice__description {
 	margin-bottom: 39px;
+
+	@media (min-width: @tablet-width) {
+		margin-bottom: 66px;
+
+		font-size: 20px;
+		line-height: 30px;
+	}
 }
 
 .program-choice__form {
-	margin-bottom: 32px;
+	margin-bottom: 31px;
+
+	@media (min-width: @tablet-width) {
+		width: 100%;
+		margin-bottom: 72px;
+	}
+
+	@media (min-width: @desktop-width) {
+		margin-bottom: 82px;
+	}
 }

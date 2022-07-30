@@ -1,10 +1,7 @@
 const barPin = document.querySelector(".progress-bar__pin");
 const rangeInput = document.querySelector(".progress-bar__input");
-const buttonBefore = document.querySelector(".progress-bar__button--before");
-const buttonAfter = document.querySelector(".progress-bar__button--after");
 const catBeforeImage = document.querySelector(".example__cat--before");
 const catAfterImage = document.querySelector(".example__cat--after");
-const viewport = document.documentElement.clientWidth;
 
 
 /* функция для смещения пина до упора налево */
@@ -14,8 +11,8 @@ const onButtonBeforeClick = function () {
 	buttonBefore.setAttribute("disabled", "disabled");
 	buttonAfter.removeAttribute("disabled");
 
-/* 	Пин переезжает налево до упора и меняются коты */
 	rangeInput.value = 0;
+
 	if (viewport < 768) {
 		barPin.style.left = "6px";
 		barPin.style.right = "auto";
@@ -34,8 +31,8 @@ const onButtonAfterClick = function () {
 	buttonAfter.setAttribute("disabled", "disabled");
 	buttonBefore.removeAttribute("disabled");
 
-	/* 	Пин переезжает направо до упора и меняются коты */
 	rangeInput.value = 100;
+
 	if (viewport < 768) {
 		barPin.style.right = "6px";
 		barPin.style.left = "auto";
@@ -52,6 +49,8 @@ const onRangeInput = function () {
 		rangeInput.value > 50 ? onButtonAfterClick() : onButtonBeforeClick();
 	} else {
 		barPin.style.left = `${rangeInput.value}%`;
+		catBeforeImage.style.width = `${100 - (100 - rangeInput.value)}%`;
+		catAfterImage.style.width = `${100 - rangeInput.value}%`;
 
 		if (rangeInput.value !== 100) {
 			buttonAfter.removeAttribute("disabled");
@@ -59,7 +58,6 @@ const onRangeInput = function () {
 		if (rangeInput.value !== 0) {
 			buttonBefore.removeAttribute("disabled");
 		}
-
 	}
 }
 

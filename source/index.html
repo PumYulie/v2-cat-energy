@@ -13,14 +13,14 @@
 
   <body class="page__body">
 		<header class="page-header site-container">
-			<a class="page-header__logo-pic-link" id="logo">
+			<a class="page-header__logo-pic-link" id="logo" tabindex="0">
 				<picture>
 					<source media="(min-width: 1440px)" srcset="./img/logo/logo-desktop.svg">
 					<source media="(min-width: 768px)" srcset="./img/logo/logo-tablet.svg">
 					<img class="page-header__logo-pic" src="./img/logo/logo-pic-mobile.svg" width="34" height="38" alt="Логотип магазина Cat Energy.">
 				</picture>
 			</a>
-			<a class="page-header__logo-name-link">
+			<a class="page-header__logo-name-link" tabindex="0">
 				<img class="page-header__logo-name" src="./img/logo/logo-text-mobile.svg" width="101" height="18" alt="">
 			</a>
 			<nav class="page-header__navigation page-header__navigation--nojs">
@@ -150,11 +150,11 @@
 							<button class="progress-bar__button progress-bar__button--before link--progress-bar" type="button" disabled>Было</button>
 							<div class="progress-bar__bar-wrapper">
 								<label class="progress-bar__input-label" for="progress-bar-range">
-									<div class="progress-bar__pin"></div>
-									<input class="progress-bar__input" id="progress-bar-range" type="range" min="0" max="100" value="50" step="1">
+									<div class="progress-bar__pin" tabindex="0"></div>
+									<input class="progress-bar__input" id="progress-bar-range" type="range" min="0" max="100" value="50" step="1" tabindex="-1">
 								</label>
 							</div>
-							<button class="progress-bar__button progress-bar__button--after link--progress-bar" type="button">Стало</button>
+							<button class="progress-bar__button progress-bar__button--after link--progress-bar" type="button" disabled>Стало</button>
 						</div>
 					</div>
 				</div>
@@ -223,6 +223,7 @@
 		</footer>
 
 		<script src="./js/app.js"></script>
+		<script src="./js/index.js"></script>
 		<script src="./js/progress-bar.js"></script>
   </body>
 

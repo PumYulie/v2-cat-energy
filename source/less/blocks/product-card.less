@@ -2,7 +2,7 @@
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: repeat(3, auto);
-	row-gap: 13px;
+/* 	row-gap: 13px; */
 
 	width: 100%;
 	max-width: 350px;
@@ -60,6 +60,7 @@
 }
 
 .product-card__title {
+	margin-bottom: 2px;
 	font-size: 16px;
 	line-height: 20px;
 
@@ -91,11 +92,12 @@
 
 .product-card__description {
 	grid-column: ~"-1 / -2";
-
+	min-height: 46px;
 	font-size: 12px;
-	line-height: 14px;
+	line-height: 10px;
 	border-collapse: collapse;
 	border-spacing: 0;
+	margin-bottom: 8px;
 
 	@media (min-width: @tablet-width) {
 		margin-bottom: 33px;
@@ -132,6 +134,7 @@
 .product-card__button {
 	grid-column: ~"1 / -1";
 	padding: 10px 0;
+	margin-top: 13px;
 
 	font-size: 16px;
 	line-height: 20px;

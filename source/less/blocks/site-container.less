@@ -3,20 +3,35 @@
 	min-width: 280px;
 	padding-left: 20px;
 	padding-right: 20px;
-}
 
-@media (min-width: 768px) {
-	.site-container {
+	@media (min-width: @tablet-width) {
 		padding-left: 30px;
 		padding-right: 30px;
 	}
-}
 
-@media (min-width: 1440px) {
-	.site-container {
+	@media (min-width: 1440px) {
 		padding-left: 0;
 		padding-right: 0;
 		max-width: 1220px;
+		margin: 0 auto;
+	}
+}
+
+.site-container--form {
+	width: auto;
+	min-width: 280px;
+	padding-left: 20px;
+	padding-right: 20px;
+
+	@media (min-width: @tablet-width) {
+		padding-left: 70px;
+		padding-right: 65px;
+	}
+
+	@media (min-width: @desktop-width) {
+		padding-left: 0;
+		padding-right: 0;
+		width: 1220px;
 		margin: 0 auto;
 	}
 }

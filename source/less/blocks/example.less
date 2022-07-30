@@ -190,11 +190,7 @@
 }
 
 
-
-
-
-
-/* сложное позиционирование, рассматриваю в разрешениях */
+/* сложное позиционирование, поэтому рассматриваю в разрешении */
 @media (min-width: @tablet-width) {
 	.example__image-wrapper {
 		position: relative;
@@ -204,7 +200,7 @@
 		overflow: hidden;
 	}
 
-	.example__cat--before {   /* родитель с заданными размерами */
+	.example__cat--before {
 		position: absolute;
     top: 0;
     left: 0;
@@ -240,7 +236,7 @@
 
 	.example__img--after {
 		position: absolute;
-    right: 43px; /* top?? */
+    right: 43px;
 
 		width: auto;
 		max-width: none;
@@ -248,9 +244,7 @@
 	}
 }
 
-
-
-
+/* сложное позиционирование, поэтому рассматриваю в разрешении */
 @media (min-width: @desktop-width) {
 	.example__image-wrapper {
 		width: 595px;
@@ -272,17 +266,6 @@
 		right: 2px;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
 
 .example__progress-wrapper {
 	margin: 0 auto;
