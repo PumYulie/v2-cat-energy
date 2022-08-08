@@ -61,7 +61,32 @@ const onRangeInput = function () {
 	}
 }
 
+const onPinKeydown = function () {
+	if (viewport >= 768) {
+		barPin.style.left = `${rangeInput.value}%`;
+		catBeforeImage.style.width = `${100 - (100 - rangeInput.value)}%`;
+		catAfterImage.style.width = `${100 - rangeInput.value}%`;
+
+		if (rangeInput.value !== 100) {
+			buttonAfter.removeAttribute("disabled");
+
+		}
+		if (rangeInput.value !== 0) {
+			buttonBefore.removeAttribute("disabled");
+		}
+	} else { return; }
+}
+
+const onPinfocus = () => {
+	//document.activeElement = rangeInput;
+	rangeInput.focus();
+	console.log(document.activeElement.className);
+	rangeInput.addEventListener("keydown", onRangeInput);
+}
+
 
 buttonBefore.addEventListener("click", onButtonBeforeClick);
 buttonAfter.addEventListener("click", onButtonAfterClick);
 rangeInput.addEventListener("input", onRangeInput);
+//barPin.addEventListener("keydown", onRangeInput);
+barPin.addEventListener("focus", onPinfocus);

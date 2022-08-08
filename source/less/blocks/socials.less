@@ -34,16 +34,11 @@
 .socials__svg {
 	display: block;
 	color: #666;
-
-	@media (min-width: @tablet-width) {
-		&--vk {
-			width: 30px;
-			height: 22px;
-		}
-	}
 }
 
 .socials__svg--vk {
+	fill: currentColor;
+
 	@media (min-width: @tablet-width) {
 			width: 30px;
 			height: 22px;
@@ -51,6 +46,8 @@
 }
 
 .socials__svg--insta {
+	fill: currentColor;
+
 	@media (min-width: @tablet-width) {
 			width: 23px;
 			height: 23px;
@@ -59,6 +56,9 @@
 }
 
 .socials__svg--fb {
+	fill: none;
+	stroke: currentColor;
+
 	@media (min-width: @tablet-width) {
 			width: 28px;
 			height: 33px;

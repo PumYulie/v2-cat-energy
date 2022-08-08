@@ -15,7 +15,7 @@ const onMenuToggleClick = function (evt) {
 	if (menuToggle.classList.contains("menu-toggle--menu-openned")) {
 		menuToggle.classList.remove("menu-toggle--menu-openned");
 		/* меняю в use  href чтобы отображалась иконка бургера из спрайта */
-		menuToggleSvg.firstElementChild.setAttribute("href", "./img/vector-sprite.svg#menu-burger-icon");
+		menuToggleSvg.firstElementChild.setAttribute("href", "./img/sprite.svg#burger-menu");
 		/* вернуть размеры бургера, удалив изменяющий размеры класс */
 		menuToggleSvg.classList.remove("menu-toggle__svg--close-icon");
 		menuToggle.lastElementChild.textContent = "Открыть меню сайта";
@@ -24,8 +24,8 @@ const onMenuToggleClick = function (evt) {
 		menuToggle.classList.add("menu-toggle--menu-openned");
 		/* 	меняю классом размеры svg под закрывающий крестик */
 		menuToggleSvg.classList.add("menu-toggle__svg--close-icon");
-		/* меняю в use href на #menu-close-icon, чтобы отображался крестик из спрайта */
-		menuToggleSvg.firstElementChild.setAttribute("href", "./img/vector-sprite.svg#menu-close-icon");
+		/* меняю в use href на #close-icon, чтобы отображался крестик из спрайта */
+		menuToggleSvg.firstElementChild.setAttribute("href", "./img/sprite.svg#close-icon");
 		menuToggle.lastElementChild.textContent = "Закрыть меню сайта";
 		mobileMenuList.classList.add("page-header__menu-list--opened");
 	}

@@ -8,7 +8,7 @@
 		<link rel="icon" href="img/favicons/favicon.svg" type="image/svg+xml">
 		<link rel="apple-touch-icon" href="img/favicons/apple180x180.png">
 <!-- 		<link rel="manifest" href="/manifest.webmanifest"> -->
-		<link rel="stylesheet" href="./css/style.css">
+		<link rel="stylesheet" href="./css/style.min.css">
   </head>
 
   <body class="page__body">
@@ -27,7 +27,7 @@
 				<!-- навешиваю на button по клику класс menu-toggle__menu-openned -->
 				<button class="page-header__menu-toggle menu-toggle" type="button">
 					<svg class="menu-toggle__svg" aria-hidden="true" focusable="false">
-						<use href="./img/vector-sprite.svg#menu-burger-icon"></use>
+						<use href="./img/sprite.svg#burger-menu"></use>
 					</svg>
 					<span class="visually-hidden">Открыть меню сайта.</span>
 				</button>
@@ -60,6 +60,10 @@
 					<p class="first-screen__description title--style">Занялся собой? Займись котом!</p>
 					<div class="first-screen__image-wrapper">
 						<picture>
+							<source media="(min-width: 1440px)" srcset="./img/index/index-can-desktop.webp 1x, ./img/index/index-can-desktop@2x.webp 2x">
+							<source media="(min-width: 768px)" srcset="./img/index/index-can-tablet.webp 1x, ./img/index/index-can-tablet@2x.webp 2x">
+							<source media="(max-width: 767px)" srcset="./img/index/index-can-mobile.webp 1x, ./img/index/index-can-mobile@2x.webp 2x">
+
 							<source media="(min-width: 1440px)" srcset="./img/index/index-can-desktop.png 1x, ./img/index/index-can-desktop@2x.png 2x">
 							<source media="(min-width: 768px)" srcset="./img/index/index-can-tablet.png 1x, ./img/index/index-can-tablet@2x.png 2x">
 							<img class="first-screen__image" width="280" height="270" src="./img/index/index-can-mobile.png" srcset="./img/index/index-can-mobile@2x.png 2x" alt="Банка корма Cat Energy PRO с курицей">
@@ -150,7 +154,7 @@
 							<button class="progress-bar__button progress-bar__button--before link--progress-bar" type="button" disabled>Было</button>
 							<div class="progress-bar__bar-wrapper">
 								<label class="progress-bar__input-label" for="progress-bar-range">
-									<div class="progress-bar__pin" tabindex="0"></div>
+									<div class="progress-bar__pin" tabindex="0" role="button"></div>
 									<input class="progress-bar__input" id="progress-bar-range" type="range" min="0" max="100" value="50" step="1" tabindex="-1">
 								</label>
 							</div>
@@ -174,8 +178,7 @@
 					</div>
 				</div>
 				<div class="contacts__map-container">
-				<!-- 	<iframe class="contacts__map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2246.350546885131!2d37.795303026953135!3d55.735037999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414aca814c8cc971%3A0x3547674f6c569662!2sPark%20Kuskovo!5e0!3m2!1sen!2sru!4v1657730207034!5m2!1sen!2sru" width="100%" height="362" allowfullscreen title="Адрес магазина Cat Energy">
-					</iframe> -->
+					<iframe class="contacts__map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17975.985628254683!2d37.53587954127293!3d55.723783385441266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54b84fc580545%3A0xb1ebdf1862eabff8!2z0JvRg9C20L3QuNC60Lg!5e0!3m2!1sru!2sru!4v1659915083640!5m2!1sru!2sru" width="100%" height="362" title="Адрес магазина Cat Energy"></iframe>
 					<img class="contacts__map-pin" width="113" height="106" src="./img/index/map-pin.png" alt="Указатель расположения магазина Cat Energy на карте">
 				</div>
 			</section>
@@ -189,7 +192,7 @@
 						<li class="socials__item socials__item--vk">
 							<a class="socials__link" href="#">
 								<svg class="socials__svg socials__svg--vk" width="23" height="16" aria-hidden="true" focusable="false">
-									<use href="./img/vector-sprite.svg#svg-vk"></use>
+									<use href="./img/sprite.svg#vk"></use>
 								</svg>
 								<span class="visually-hidden">Вконтакте</span>
 							</a>
@@ -197,7 +200,7 @@
 						<li class="socials__item socials__item--insta">
 							<a class="socials__link" href="#">
 								<svg class="socials__svg socials__svg--insta" width="16" height="16" aria-hidden="true" focusable="false">
-									<use href="./img/vector-sprite.svg#svg-insta"></use>
+									<use href="./img/sprite.svg#insta"></use>
 								</svg>
 								<span class="visually-hidden">Инстаграм</span>
 							</a>
@@ -205,7 +208,7 @@
 						<li class="socials__item">
 							<a class="socials__link" href="#">
 								<svg class="socials__svg socials__svg--fb" width="22" height="22" aria-hidden="true" focusable="false">
-									<use href="./img/vector-sprite.svg#svg-fb-new"></use>
+									<use href="./img/sprite.svg#fb"></use>
 								</svg>
 								<span class="visually-hidden">Фейсбук</span>
 							</a>
@@ -215,7 +218,7 @@
 				<a class="page-footer__dev-link" href="#">
 					<p class="page-footer__dev-name">HTML&nbsp;Academy</p>
 					<svg class="page-footer__dev-logo-svg" width="27" height="34" aria-hidden="true" focusable="false">
-						<use href="./img/vector-sprite.svg#dev-logo"></use>
+						<use href="./img/sprite.svg#htmlacademy"></use>
 					</svg>
 					<span class="visually-hidden">Логотип HTML Academy</span>
 				</a>
