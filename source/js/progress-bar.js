@@ -23,7 +23,6 @@ const onButtonBeforeClick = function () {
 	}
 }
 
-
 /* функция для крайне правого смещения пина */
 const onButtonAfterClick = function () {
 	if (buttonAfter.hasAttribute("disabled")) { return; }
@@ -43,7 +42,6 @@ const onButtonAfterClick = function () {
 	}
 }
 
-
 const onRangeInput = function () {
 	if (viewport < 768) {
 		rangeInput.value > 50 ? onButtonAfterClick() : onButtonBeforeClick();
@@ -61,32 +59,7 @@ const onRangeInput = function () {
 	}
 }
 
-const onPinKeydown = function () {
-	if (viewport >= 768) {
-		barPin.style.left = `${rangeInput.value}%`;
-		catBeforeImage.style.width = `${100 - (100 - rangeInput.value)}%`;
-		catAfterImage.style.width = `${100 - rangeInput.value}%`;
+buttonBefore.addEventListener("click", onButtonBeforeClick, {passive: true});
+buttonAfter.addEventListener("click", onButtonAfterClick, {passive: true});
+rangeInput.addEventListener("input", onRangeInput, {passive: true});
 
-		if (rangeInput.value !== 100) {
-			buttonAfter.removeAttribute("disabled");
-
-		}
-		if (rangeInput.value !== 0) {
-			buttonBefore.removeAttribute("disabled");
-		}
-	} else { return; }
-}
-
-const onPinfocus = () => {
-	//document.activeElement = rangeInput;
-	rangeInput.focus();
-	console.log(document.activeElement.className);
-	rangeInput.addEventListener("keydown", onRangeInput);
-}
-
-
-buttonBefore.addEventListener("click", onButtonBeforeClick);
-buttonAfter.addEventListener("click", onButtonAfterClick);
-rangeInput.addEventListener("input", onRangeInput);
-//barPin.addEventListener("keydown", onRangeInput);
-barPin.addEventListener("focus", onPinfocus);

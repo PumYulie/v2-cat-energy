@@ -62,6 +62,9 @@
 	width: 20px;
 	height: 14px;
 
+	fill: none;
+	color: @more-dark-grey;
+
 	@media (min-width: @tablet-width) {
 		top: 18px;
 		right: 18px;
@@ -70,8 +73,9 @@
 	}
 }
 
-.form-owner__input--email:hover + .form-owner__svg--email {
-		stroke: @button-bg-color;
+.form-owner__input--email:hover + .form-owner__svg--email,
+.form-owner__input--email:focus + .form-owner__svg--email {
+	color: @button-bg-color;
 }
 
 .form-owner__svg--tel {
@@ -81,6 +85,8 @@
 	width: 20px;
 	height: 20px;
 
+	color: @more-dark-grey;
+
 	@media (min-width: @tablet-width) {
 		top: 16px;
 		right: 18px;
@@ -89,8 +95,9 @@
 	@media (min-width: @desktop-width) {
 		right: 17px;
 	}
-	}
+}
 
-.form-owner__input--tel:hover + .form-owner__svg--tel {
-	fill: @button-bg-color;
+.form-owner__input--tel:hover + .form-owner__svg--tel,
+.form-owner__input--tel:focus + .form-owner__svg--tel {
+	color: @button-bg-color;
 }

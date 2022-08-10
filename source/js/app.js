@@ -1,5 +1,5 @@
 const headerNavigation = document.querySelector(".page-header__navigation");
-const menuToggle = document.querySelector(".page-header__menu-toggle"); /* кнопка меню */
+const menuToggle = document.querySelector(".page-header__menu-toggle");
 const menuToggleSvg = document.querySelector(".menu-toggle__svg");
 const mobileMenuList = document.querySelector(".page-header__menu-list");
 
@@ -10,7 +10,6 @@ if (headerNavigation.classList.contains("page-header__navigation--nojs")) {
 
 /* счетчики и обработчики в header */
 const onMenuToggleClick = function (evt) {
-	console.log(evt);
 	/* если меню открыто = на кнопке висит сигнальный класс --menu-openned */
 	if (menuToggle.classList.contains("menu-toggle--menu-openned")) {
 		menuToggle.classList.remove("menu-toggle--menu-openned");
