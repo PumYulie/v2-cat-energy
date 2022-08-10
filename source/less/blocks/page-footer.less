@@ -51,11 +51,6 @@
 	}
 }
 
-.page-footer__dev-logo-svg {
-	fill: currentColor;
-	color: #666;
-}
-
 .page-footer__dev-link {
 	display: flex;
 	justify-content: space-between;
@@ -65,7 +60,7 @@
 
 	&:hover .page-footer__dev-logo-svg,
 	&:active .page-footer__dev-logo-svg {
-		color: @button-bg-color;
+		fill: @button-bg-color;
 	}
 
 	&:active {
@@ -80,11 +75,11 @@
 }
 
 .page-footer__dev-name {
+	display: block;
 	margin: 0;
-	font-size: 16px;
+	margin-top: 3px;
 
 	@media (min-width: @tablet-width) {
-		margin-top: 6px;
-		line-height: 18px;
+		margin-top: 9px;
 	}
 }

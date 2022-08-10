@@ -28,7 +28,6 @@ export const styles = () => {
     .pipe(browser.stream());
 }
 
-// HTML
 const html = () => {
 	return gulp
 		.src("source/*.html")
@@ -36,7 +35,6 @@ const html = () => {
 		.pipe(gulp.dest("build"));
 }
 
-// Scripts
 const scripts = () => {
 	return gulp
 		.src("source/js/*.js")
@@ -46,7 +44,6 @@ const scripts = () => {
 		.pipe(browser.stream());
 }
 
-// Images
 const optimizeImages = () => {
 	return gulp
 		.src(["source/img/**/*.{png,jpg}", "!source/img/catalog/css/*.{png,jpg}", "!source/img/index/css/*.{png,jpg}"])
@@ -60,7 +57,6 @@ const copyImages = () => {
 		.pipe(gulp.dest("build/img"));
 }
 
-// WebP
 const createWebp = () => {
 	return gulp
 		.src("source/img/**/*.{png,jpg}")
@@ -68,7 +64,6 @@ const createWebp = () => {
 		.pipe(gulp.dest("build/img"));
 }
 
-// avif
 const createAvif = () => {
 	return gulp
 		.src(["source/img/**/*.{png,jpg}", "!source/img/index/css/*.{png,jpg}", "!source/img/catalog/css/*.{png,jpg}"])
@@ -79,7 +74,7 @@ const createAvif = () => {
 // SVG
 const svg = () => {
 	return gulp
-		.src(["source/img/**/*.svg", "!source/img/icons-sprite/*.svg", "!source/img/sprite.svg"])
+		.src(["source/img/**/*.svg", "!source/img/icons-sprite/*.svg", "!source/img/sprite.svg", "!source/img/logo/*.svg"])
 		.pipe(svgmin())
 		.pipe(gulp.dest("build/img"));
 }
@@ -99,18 +94,17 @@ const copy = (done) => {
 		.src([
 			"source/fonts/*.{woff2,woff}",
 			"source/*.ico",
-			"source/*.webmanifest"
+			"source/*.webmanifest",
+			"source/img/logo/*.svg"
 		], { base: "source"})
 		.pipe(gulp.dest("build"));
 		done();
 }
 
-// Clean
 const clean = () => {
 	return del("build");
 }
 
-// Server
 const server = (done) => {
   browser.init({
     server: {
@@ -123,13 +117,11 @@ const server = (done) => {
   done();
 }
 
-// Reload
 const reload = (done) => {
 	browser.reload();
 	done();
 }
 
-// Watcher
 const watcher = () => {
   gulp.watch('source/less/**/*.less', gulp.series(styles));
 	gulp.watch('source/js/*.js', gulp.series(scripts));
