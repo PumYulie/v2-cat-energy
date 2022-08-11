@@ -46,14 +46,14 @@ const scripts = () => {
 
 const optimizeImages = () => {
 	return gulp
-		.src(["source/img/**/*.{png,jpg}", "!source/img/catalog/css/*.{png,jpg}", "!source/img/index/css/*.{png,jpg}"])
+		.src("source/img/**/*.{png,jpg}")
 		.pipe(squoosh())
 		.pipe(gulp.dest("build/img"));
 }
 
 const copyImages = () => {
 	return gulp
-		.src(["source/img/**/*.{png,jpg}", "!source/img/catalog/css/*.{png,jpg}", "!source/img/index/css/*.{png,jpg}"])
+		.src("source/img/**/*.{png,jpg}")
 		.pipe(gulp.dest("build/img"));
 }
 
@@ -66,7 +66,7 @@ const createWebp = () => {
 
 const createAvif = () => {
 	return gulp
-		.src(["source/img/**/*.{png,jpg}", "!source/img/index/css/*.{png,jpg}", "!source/img/catalog/css/*.{png,jpg}"])
+		.src("source/img/**/*.{png,jpg}")
 		.pipe(squoosh({ avif: {quality: 90,} }))
 		.pipe(gulp.dest("build/img"));
 }
@@ -74,9 +74,9 @@ const createAvif = () => {
 // SVG
 const svg = () => {
 	return gulp
-		.src(["source/img/**/*.svg", "!source/img/icons-sprite/*.svg", "!source/img/sprite.svg", "!source/img/logo/*.svg"])
+		.src("source/img/icons/*.svg")
 		.pipe(svgmin())
-		.pipe(gulp.dest("build/img"));
+		.pipe(gulp.dest("build/img/icons"));
 }
 
 // sprite.svg
@@ -153,10 +153,10 @@ export default gulp.series(
 		styles,
 		html,
 		scripts,
+		svg,
+		svgSprite,
 		createWebp,
 		createAvif,
-		svg,
-		svgSprite
 	),
 	gulp.series(
 		server, watcher
