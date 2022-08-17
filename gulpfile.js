@@ -59,14 +59,14 @@ const copyImages = () => {
 
 const createWebp = () => {
 	return gulp
-		.src("source/img/**/*.{png,jpg}")
+		.src(["source/img/**/*.{png,jpg}", "!source/img/index/css/*.{png,jpg}", "!source/img/catalog/css/*.{png,jpg}"]) //в папке css лежат фоны, вставка в разных форматах еще не поддрживается
 		.pipe(squoosh({ webp: {quality: 90,} }))
 		.pipe(gulp.dest("build/img"));
 }
 
 const createAvif = () => {
 	return gulp
-		.src("source/img/**/*.{png,jpg}")
+		.src(["source/img/**/*.{png,jpg}", "!source/img/index/css/*.{png,jpg}", "!source/img/catalog/css/*.{png,jpg}"]) //в папке css лежат фоны, вставка в разных форматах еще не поддерживается
 		.pipe(squoosh({ avif: {quality: 90,} }))
 		.pipe(gulp.dest("build/img"));
 }
@@ -79,7 +79,6 @@ const svg = () => {
 		.pipe(gulp.dest("build/img/icons"));
 }
 
-// sprite.svg
 const svgSprite = () => {
 	return gulp.src("source/img/icons-sprite/*.svg")
 		.pipe(svgmin())
